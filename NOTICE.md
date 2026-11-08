@@ -8,4 +8,4 @@ The original case PDF and presentation template are not redistributed. The final
 
 Python packages and Tesseract retain their respective licences. No virtual environment, package vendor tree, Tesseract executable or trained-data binary is distributed in this repository. Install dependencies using the listed sources and their licence terms.
 
-The README uses a plain project header and a native draw.io architecture based on the supplied presentation and prototype code. Earlier SVG/AI-generated branding is retained separately, with its scope recorded in `docs/README_ART.md`; it is not presented as a real product photograph. Historical product captures remain in the evidence files. The attached PDF replaces the screenshot gallery in the README.
+The README uses an AI-generated concept cover and a native draw.io architecture based on the supplied presentation and prototype code. Artwork provenance is recorded in `docs/README_ART.md`; it is not presented as a real product photograph. Historical product captures remain in the evidence files. The attached PDF replaces the screenshot gallery in the README.

@@ -1,4 +1,6 @@
-<h1 align="center">QuoteLock</h1>
+<p align="center">
+  <img src="docs/assets/quotelock-cover-v2.png" alt="QuoteLock — One quote. Every handoff. Rules decide; the model only listens." width="100%">
+</p>
 
 <p align="center"><strong>MSME bundle quoting, verification and order tracking</strong><br>Logging · VIT Vellore · Project Udyam Digital</p>
 
