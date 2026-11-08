@@ -1,0 +1,3445 @@
+{
+  "meta": {
+    "case_date": "2026-07-15",
+    "all_data": "fictional Accel synthetic",
+    "source_hashes": {
+      "mock_gstin_registry.csv": "53f18df9ef8298dfc02640aedca6329805167d4b414499b763b493f48095f33a",
+      "mock_udyam_registry.csv": "588ae3503180dd3404bebe1eab480a7c57b637ca0d40a50ae636005f6a59032f",
+      "product_catalogue.csv": "5110529705bda36f668cfc92e7de943a4d3c6d5b7f78ae35c4d7b0484a136e0c",
+      "smb_leads.csv": "b2521e8cedcf3b5775a087d40d07f548afbe3e7094a9fbad3a3908ffb01120ea"
+    }
+  },
+  "numbers": {
+    "funnel.Lead": {
+      "key": "funnel.Lead",
+      "value": 5000,
+      "formula": "count stage_reached >= Lead",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "funnel.Contacted": {
+      "key": "funnel.Contacted",
+      "value": 3406,
+      "formula": "count stage_reached >= Contacted",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "funnel.Needs assessed": {
+      "key": "funnel.Needs assessed",
+      "value": 1974,
+      "formula": "count stage_reached >= Needs assessed",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "funnel.Quote accepted": {
+      "key": "funnel.Quote accepted",
+      "value": 861,
+      "formula": "count stage_reached >= Quote accepted",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "funnel.KYC complete": {
+      "key": "funnel.KYC complete",
+      "value": 588,
+      "formula": "count stage_reached >= KYC complete",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "funnel.Activated": {
+      "key": "funnel.Activated",
+      "value": 368,
+      "formula": "count stage_reached >= Activated",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.leads": {
+      "key": "baseline.leads",
+      "value": 5000,
+      "formula": "count all",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.activations": {
+      "key": "baseline.activations",
+      "value": 368,
+      "formula": "count Activated",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.cost": {
+      "key": "baseline.cost",
+      "value": 5539640.0,
+      "formula": "sum acquisition costs, all leads",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.mrr": {
+      "key": "baseline.mrr",
+      "value": 4544990.0,
+      "formula": "sum activated monthly value",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.cac": {
+      "key": "baseline.cac",
+      "value": 15053.369565217392,
+      "formula": "cost/activations",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.payback": {
+      "key": "baseline.payback",
+      "value": 1.218845365996405,
+      "formula": "cost/MRR",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.conversion": {
+      "key": "baseline.conversion",
+      "value": 7.359999999999999,
+      "formula": "activated/all leads*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.quote_conversion": {
+      "key": "baseline.quote_conversion",
+      "value": 42.74099883855981,
+      "formula": "368/861*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.prequote_loss": {
+      "key": "baseline.prequote_loss",
+      "value": 1113,
+      "formula": "needs assessed - quote accepted",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.needs_quote_conversion": {
+      "key": "baseline.needs_quote_conversion",
+      "value": 43.61702127659575,
+      "formula": "861/1974*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.postquote_loss": {
+      "key": "baseline.postquote_loss",
+      "value": 493,
+      "formula": "quote accepted - activated",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.days_mean": {
+      "key": "baseline.days_mean",
+      "value": 17.616847826086957,
+      "formula": "mean days_lead_to_activation",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.calls_mean": {
+      "key": "baseline.calls_mean",
+      "value": 3.010869565217391,
+      "formula": "mean activated follow-up calls; window unspecified",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.churn_flags": {
+      "key": "baseline.churn_flags",
+      "value": 56,
+      "formula": "count synthetic flag Y",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.churn_pct": {
+      "key": "baseline.churn_pct",
+      "value": 15.217391304347828,
+      "formula": "flags/activated*100, not matured",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.future_activations": {
+      "key": "baseline.future_activations",
+      "value": 16,
+      "formula": "count activated after case date",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.within30": {
+      "key": "baseline.within30",
+      "value": 366,
+      "formula": "count lead-to-activation <=30 days",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.days_max": {
+      "key": "baseline.days_max",
+      "value": 31.0,
+      "formula": "max supplied lead-to-activation",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "baseline.six_month_matured": {
+      "key": "baseline.six_month_matured",
+      "value": 0,
+      "formula": "earliest activation Apr13 +6 calendar months >Jul15",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Missing GST or Udyam document": {
+      "key": "reason.Missing GST or Udyam document",
+      "value": 94,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Document details did not match": {
+      "key": "reason.Document details did not match",
+      "value": 47,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Only wanted a mobile plan": {
+      "key": "reason.Only wanted a mobile plan",
+      "value": 280,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Owner had no time for a visit": {
+      "key": "reason.Owner had no time for a visit",
+      "value": 531,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Visit not scheduled by sales": {
+      "key": "reason.Visit not scheduled by sales",
+      "value": 296,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Installation delayed beyond 21 days": {
+      "key": "reason.Installation delayed beyond 21 days",
+      "value": 98,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Quote took too long to arrive": {
+      "key": "reason.Quote took too long to arrive",
+      "value": 179,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Decided to wait": {
+      "key": "reason.Decided to wait",
+      "value": 107,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Customer cancelled before install": {
+      "key": "reason.Customer cancelled before install",
+      "value": 53,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Quote too complex to understand": {
+      "key": "reason.Quote too complex to understand",
+      "value": 206,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Locked in with current provider": {
+      "key": "reason.Locked in with current provider",
+      "value": 325,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Competitor offered cheaper plan": {
+      "key": "reason.Competitor offered cheaper plan",
+      "value": 207,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Price too high": {
+      "key": "reason.Price too high",
+      "value": 414,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Unreachable after 3 attempts": {
+      "key": "reason.Unreachable after 3 attempts",
+      "value": 805,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Site not feasible for fibre": {
+      "key": "reason.Site not feasible for fibre",
+      "value": 41,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Found paperwork too long": {
+      "key": "reason.Found paperwork too long",
+      "value": 79,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.First payment failed": {
+      "key": "reason.First payment failed",
+      "value": 28,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Wrong or invalid number": {
+      "key": "reason.Wrong or invalid number",
+      "value": 319,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Not interested on first call": {
+      "key": "reason.Not interested on first call",
+      "value": 470,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason.Authorised signatory not available": {
+      "key": "reason.Authorised signatory not available",
+      "value": 53,
+      "formula": "count exact drop_reason",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.leads": {
+      "key": "segment.micro.leads",
+      "value": 2709,
+      "formula": "same-segment raw rows: leads",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.activations": {
+      "key": "segment.micro.activations",
+      "value": 110,
+      "formula": "same-segment raw rows: activations",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.quotes": {
+      "key": "segment.micro.quotes",
+      "value": 325,
+      "formula": "same-segment raw rows: quotes",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.cac": {
+      "key": "segment.micro.cac",
+      "value": 20007.090909090908,
+      "formula": "same-segment raw rows: cac",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.arpu": {
+      "key": "segment.micro.arpu",
+      "value": 2504.818181818182,
+      "formula": "same-segment raw rows: arpu",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.payback": {
+      "key": "segment.micro.payback",
+      "value": 7.987442383769462,
+      "formula": "same-segment raw rows: payback",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.conversion": {
+      "key": "segment.micro.conversion",
+      "value": 4.060538944259875,
+      "formula": "same-segment raw rows: conversion",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.lead_share": {
+      "key": "segment.micro.lead_share",
+      "value": 54.17999999999999,
+      "formula": "same-segment raw rows: lead_share",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.micro.proxy": {
+      "key": "segment.micro.proxy",
+      "value": 2688.4545454545455,
+      "formula": "same-segment raw rows: proxy",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.visit.micro": {
+      "key": "pool.visit.micro",
+      "value": 484,
+      "formula": "count exact stage-specific reason set ['Owner had no time for a visit', 'Visit not scheduled by sales']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.quote.micro": {
+      "key": "pool.quote.micro",
+      "value": 242,
+      "formula": "count exact stage-specific reason set ['Quote too complex to understand', 'Quote took too long to arrive']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.price.micro": {
+      "key": "pool.price.micro",
+      "value": 381,
+      "formula": "count exact stage-specific reason set ['Price too high', 'Competitor offered cheaper plan']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.leads": {
+      "key": "segment.professional.leads",
+      "value": 1247,
+      "formula": "same-segment raw rows: leads",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.activations": {
+      "key": "segment.professional.activations",
+      "value": 138,
+      "formula": "same-segment raw rows: activations",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.quotes": {
+      "key": "segment.professional.quotes",
+      "value": 285,
+      "formula": "same-segment raw rows: quotes",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.cac": {
+      "key": "segment.professional.cac",
+      "value": 10694.710144927536,
+      "formula": "same-segment raw rows: cac",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.arpu": {
+      "key": "segment.professional.arpu",
+      "value": 6795.869565217391,
+      "formula": "same-segment raw rows: arpu",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.payback": {
+      "key": "segment.professional.payback",
+      "value": 1.5737073883326402,
+      "formula": "same-segment raw rows: payback",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.conversion": {
+      "key": "segment.professional.conversion",
+      "value": 11.066559743384122,
+      "formula": "same-segment raw rows: conversion",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.lead_share": {
+      "key": "segment.professional.lead_share",
+      "value": 24.94,
+      "formula": "same-segment raw rows: lead_share",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.professional.proxy": {
+      "key": "segment.professional.proxy",
+      "value": 4169.347826086957,
+      "formula": "same-segment raw rows: proxy",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.visit.professional": {
+      "key": "pool.visit.professional",
+      "value": 190,
+      "formula": "count exact stage-specific reason set ['Owner had no time for a visit', 'Visit not scheduled by sales']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.quote.professional": {
+      "key": "pool.quote.professional",
+      "value": 82,
+      "formula": "count exact stage-specific reason set ['Quote too complex to understand', 'Quote took too long to arrive']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.price.professional": {
+      "key": "pool.price.professional",
+      "value": 145,
+      "formula": "count exact stage-specific reason set ['Price too high', 'Competitor offered cheaper plan']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.leads": {
+      "key": "segment.multisite.leads",
+      "value": 755,
+      "formula": "same-segment raw rows: leads",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.activations": {
+      "key": "segment.multisite.activations",
+      "value": 83,
+      "formula": "same-segment raw rows: activations",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.quotes": {
+      "key": "segment.multisite.quotes",
+      "value": 168,
+      "formula": "same-segment raw rows: quotes",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.cac": {
+      "key": "segment.multisite.cac",
+      "value": 15614.33734939759,
+      "formula": "same-segment raw rows: cac",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.arpu": {
+      "key": "segment.multisite.arpu",
+      "value": 31233.493975903613,
+      "formula": "same-segment raw rows: arpu",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.payback": {
+      "key": "segment.multisite.payback",
+      "value": 0.49992285081662413,
+      "formula": "same-segment raw rows: payback",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.conversion": {
+      "key": "segment.multisite.conversion",
+      "value": 10.993377483443709,
+      "formula": "same-segment raw rows: conversion",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.lead_share": {
+      "key": "segment.multisite.lead_share",
+      "value": 15.1,
+      "formula": "same-segment raw rows: lead_share",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.multisite.proxy": {
+      "key": "segment.multisite.proxy",
+      "value": 9099.036144578313,
+      "formula": "same-segment raw rows: proxy",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.visit.multisite": {
+      "key": "pool.visit.multisite",
+      "value": 116,
+      "formula": "count exact stage-specific reason set ['Owner had no time for a visit', 'Visit not scheduled by sales']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.quote.multisite": {
+      "key": "pool.quote.multisite",
+      "value": 44,
+      "formula": "count exact stage-specific reason set ['Quote too complex to understand', 'Quote took too long to arrive']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.price.multisite": {
+      "key": "pool.price.multisite",
+      "value": 74,
+      "formula": "count exact stage-specific reason set ['Price too high', 'Competitor offered cheaper plan']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.leads": {
+      "key": "segment.manufacturer.leads",
+      "value": 289,
+      "formula": "same-segment raw rows: leads",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.activations": {
+      "key": "segment.manufacturer.activations",
+      "value": 37,
+      "formula": "same-segment raw rows: activations",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.quotes": {
+      "key": "segment.manufacturer.quotes",
+      "value": 83,
+      "formula": "same-segment raw rows: quotes",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.cac": {
+      "key": "segment.manufacturer.cac",
+      "value": 15324.324324324325,
+      "formula": "same-segment raw rows: cac",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.arpu": {
+      "key": "segment.manufacturer.arpu",
+      "value": 19979.72972972973,
+      "formula": "same-segment raw rows: arpu",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.payback": {
+      "key": "segment.manufacturer.payback",
+      "value": 0.7669935745688198,
+      "formula": "same-segment raw rows: payback",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.conversion": {
+      "key": "segment.manufacturer.conversion",
+      "value": 12.802768166089965,
+      "formula": "same-segment raw rows: conversion",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.lead_share": {
+      "key": "segment.manufacturer.lead_share",
+      "value": 5.779999999999999,
+      "formula": "same-segment raw rows: lead_share",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "segment.manufacturer.proxy": {
+      "key": "segment.manufacturer.proxy",
+      "value": 9606.216216216217,
+      "formula": "same-segment raw rows: proxy",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.visit.manufacturer": {
+      "key": "pool.visit.manufacturer",
+      "value": 37,
+      "formula": "count exact stage-specific reason set ['Owner had no time for a visit', 'Visit not scheduled by sales']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.quote.manufacturer": {
+      "key": "pool.quote.manufacturer",
+      "value": 17,
+      "formula": "count exact stage-specific reason set ['Quote too complex to understand', 'Quote took too long to arrive']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.price.manufacturer": {
+      "key": "pool.price.manufacturer",
+      "value": 21,
+      "formula": "count exact stage-specific reason set ['Price too high', 'Competitor offered cheaper plan']",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.visit": {
+      "key": "pool.visit",
+      "value": 827,
+      "formula": "sum exact disjoint reasons within stage",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.quote": {
+      "key": "pool.quote",
+      "value": 385,
+      "formula": "sum exact disjoint reasons within stage",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.price": {
+      "key": "pool.price",
+      "value": 621,
+      "formula": "sum exact disjoint reasons within stage",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "gst.activation.Y": {
+      "key": "gst.activation.Y",
+      "value": 9.564233163554047,
+      "formula": "activations/has_gstin=Y",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "gst.activation.N": {
+      "key": "gst.activation.N",
+      "value": 2.046384720327422,
+      "formula": "activations/has_gstin=N",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "micro.no_gst": {
+      "key": "micro.no_gst",
+      "value": 1278,
+      "formula": "count flags in Micro",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "micro.no_gst_no_udyam": {
+      "key": "micro.no_gst_no_udyam",
+      "value": 771,
+      "formula": "count flags in Micro",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "matched_micro.leads": {
+      "key": "matched_micro.leads",
+      "value": 1247,
+      "formula": "four-channel Micro-only subset: leads",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "matched_micro.activations": {
+      "key": "matched_micro.activations",
+      "value": 53,
+      "formula": "four-channel Micro-only subset: activations",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "matched_micro.cac": {
+      "key": "matched_micro.cac",
+      "value": 8068.301886792453,
+      "formula": "four-channel Micro-only subset: cac",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "matched_micro.conversion": {
+      "key": "matched_micro.conversion",
+      "value": 4.250200481154772,
+      "formula": "four-channel Micro-only subset: conversion",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "channels.field_partner_spend_pct": {
+      "key": "channels.field_partner_spend_pct",
+      "value": 85.39905120188315,
+      "formula": "field+partner acquisition cost/total; no activity attribution",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Malayalam": {
+      "key": "language.Malayalam",
+      "value": 83,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Malayalam": {
+      "key": "language_pct.Malayalam",
+      "value": 1.66,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Punjabi": {
+      "key": "language.Punjabi",
+      "value": 96,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Punjabi": {
+      "key": "language_pct.Punjabi",
+      "value": 1.92,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.English": {
+      "key": "language.English",
+      "value": 1168,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.English": {
+      "key": "language_pct.English",
+      "value": 23.36,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Hindi": {
+      "key": "language.Hindi",
+      "value": 2137,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Hindi": {
+      "key": "language_pct.Hindi",
+      "value": 42.74,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Telugu": {
+      "key": "language.Telugu",
+      "value": 207,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Telugu": {
+      "key": "language_pct.Telugu",
+      "value": 4.14,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Bengali": {
+      "key": "language.Bengali",
+      "value": 111,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Bengali": {
+      "key": "language_pct.Bengali",
+      "value": 2.22,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Kannada": {
+      "key": "language.Kannada",
+      "value": 253,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Kannada": {
+      "key": "language_pct.Kannada",
+      "value": 5.06,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Marathi": {
+      "key": "language.Marathi",
+      "value": 505,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Marathi": {
+      "key": "language_pct.Marathi",
+      "value": 10.100000000000001,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Gujarati": {
+      "key": "language.Gujarati",
+      "value": 233,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Gujarati": {
+      "key": "language_pct.Gujarati",
+      "value": 4.66,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.Tamil": {
+      "key": "language.Tamil",
+      "value": 207,
+      "formula": "count preferred_language",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language_pct.Tamil": {
+      "key": "language_pct.Tamil",
+      "value": 4.14,
+      "formula": "preferred_language/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "language.non_english_pct": {
+      "key": "language.non_english_pct",
+      "value": 76.64,
+      "formula": "non-English preference/5000*100",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "rules.union": {
+      "key": "rules.union",
+      "value": 56,
+      "formula": "distinct activated lead IDs with >=1 supplied hard-rule conflict",
+      "source": "product_catalogue.csv + mock_gstin_registry.csv + smb_leads.csv",
+      "label": "V"
+    },
+    "rules.employees": {
+      "key": "rules.employees",
+      "value": 8,
+      "formula": "distinct affected lead IDs; categories overlap",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "rules.tier": {
+      "key": "rules.tier",
+      "value": 24,
+      "formula": "distinct affected lead IDs; categories overlap",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "rules.gst": {
+      "key": "rules.gst",
+      "value": 21,
+      "formula": "distinct affected lead IDs; categories overlap",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "rules.dependency": {
+      "key": "rules.dependency",
+      "value": 9,
+      "formula": "distinct affected lead IDs; categories overlap",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "rules.mrr": {
+      "key": "rules.mrr",
+      "value": 768830.0,
+      "formula": "recorded MRR of rule-conflicting rows",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "bundle.professional.min": {
+      "key": "bundle.professional.min",
+      "value": 3118.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.professional.max": {
+      "key": "bundle.professional.max",
+      "value": 3893.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.professional.mid": {
+      "key": "bundle.professional.mid",
+      "value": 3505.5,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.professional.setup": {
+      "key": "bundle.professional.setup",
+      "value": 1500.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.professional.term": {
+      "key": "bundle.professional.term",
+      "value": 12,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "segment.professional.clean_arpu": {
+      "key": "segment.professional.clean_arpu",
+      "value": 6268.482142857143,
+      "formula": "mean monthly value, no detected supplied-rule conflict",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "bundle.micro.min": {
+      "key": "bundle.micro.min",
+      "value": 1198.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.micro.max": {
+      "key": "bundle.micro.max",
+      "value": 1498.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.micro.mid": {
+      "key": "bundle.micro.mid",
+      "value": 1348.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.micro.setup": {
+      "key": "bundle.micro.setup",
+      "value": 0.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.micro.term": {
+      "key": "bundle.micro.term",
+      "value": 6,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "segment.micro.clean_arpu": {
+      "key": "segment.micro.clean_arpu",
+      "value": 2436.893203883495,
+      "formula": "mean monthly value, no detected supplied-rule conflict",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "bundle.multisite.min": {
+      "key": "bundle.multisite.min",
+      "value": 13494.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.multisite.max": {
+      "key": "bundle.multisite.max",
+      "value": 17694.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.multisite.mid": {
+      "key": "bundle.multisite.mid",
+      "value": 15594.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.multisite.setup": {
+      "key": "bundle.multisite.setup",
+      "value": 19500.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.multisite.term": {
+      "key": "bundle.multisite.term",
+      "value": 24,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "segment.multisite.clean_arpu": {
+      "key": "segment.multisite.clean_arpu",
+      "value": 31077.30769230769,
+      "formula": "mean monthly value, no detected supplied-rule conflict",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "bundle.manufacturer.min": {
+      "key": "bundle.manufacturer.min",
+      "value": 11489.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.manufacturer.max": {
+      "key": "bundle.manufacturer.max",
+      "value": 17489.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "V",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.manufacturer.mid": {
+      "key": "bundle.manufacturer.mid",
+      "value": 14489.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.manufacturer.setup": {
+      "key": "bundle.manufacturer.setup",
+      "value": 44000.0,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "bundle.manufacturer.term": {
+      "key": "bundle.manufacturer.term",
+      "value": 24,
+      "formula": "sum catalogue quantities; MIDPOINT-v1; setup/unit; term=max",
+      "source": "product_catalogue.csv",
+      "label": "A",
+      "basis": "Versioned illustrative pre-tax policy, no discounts; unknown taxes/charges block final lock"
+    },
+    "segment.manufacturer.clean_arpu": {
+      "key": "segment.manufacturer.clean_arpu",
+      "value": 21003.157894736843,
+      "formula": "mean monthly value, no detected supplied-rule conflict",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "typical_days.P01": {
+      "key": "typical_days.P01",
+      "value": 5,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P02": {
+      "key": "typical_days.P02",
+      "value": 5,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P03": {
+      "key": "typical_days.P03",
+      "value": 7,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P04": {
+      "key": "typical_days.P04",
+      "value": 2,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P05": {
+      "key": "typical_days.P05",
+      "value": 21,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P06": {
+      "key": "typical_days.P06",
+      "value": 30,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P07": {
+      "key": "typical_days.P07",
+      "value": 1,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P08": {
+      "key": "typical_days.P08",
+      "value": 1,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P09": {
+      "key": "typical_days.P09",
+      "value": 3,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P10": {
+      "key": "typical_days.P10",
+      "value": 14,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P11": {
+      "key": "typical_days.P11",
+      "value": 1,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P12": {
+      "key": "typical_days.P12",
+      "value": 5,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P13": {
+      "key": "typical_days.P13",
+      "value": 3,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P14": {
+      "key": "typical_days.P14",
+      "value": 4,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P15": {
+      "key": "typical_days.P15",
+      "value": 3,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P16": {
+      "key": "typical_days.P16",
+      "value": 1,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P17": {
+      "key": "typical_days.P17",
+      "value": 1,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P18": {
+      "key": "typical_days.P18",
+      "value": 2,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P19": {
+      "key": "typical_days.P19",
+      "value": 3,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P20": {
+      "key": "typical_days.P20",
+      "value": 1,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P21": {
+      "key": "typical_days.P21",
+      "value": 10,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P22": {
+      "key": "typical_days.P22",
+      "value": 3,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P23": {
+      "key": "typical_days.P23",
+      "value": 4,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P24": {
+      "key": "typical_days.P24",
+      "value": 10,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "typical_days.P25": {
+      "key": "typical_days.P25",
+      "value": 3,
+      "formula": "source typical_install_days, not a guarantee",
+      "source": "product_catalogue.csv",
+      "label": "V"
+    },
+    "micro.ceiling.6": {
+      "key": "micro.ceiling.6",
+      "value": 8088,
+      "formula": "1348*6 constant months revenue",
+      "source": "catalogue midpoint + policy",
+      "label": "P",
+      "basis": "Revenue coverage excludes service costs, margin, churn, collection"
+    },
+    "micro.ceiling.12": {
+      "key": "micro.ceiling.12",
+      "value": 16176,
+      "formula": "1348*12 constant months revenue",
+      "source": "catalogue midpoint + policy",
+      "label": "P",
+      "basis": "Revenue coverage excludes service costs, margin, churn, collection"
+    },
+    "micro.ceiling.24": {
+      "key": "micro.ceiling.24",
+      "value": 32352,
+      "formula": "1348*24 constant months revenue",
+      "source": "catalogue midpoint + policy",
+      "label": "P",
+      "basis": "Revenue coverage excludes service costs, margin, churn, collection"
+    },
+    "micro.starter_payback": {
+      "key": "micro.starter_payback",
+      "value": 14.842055570542216,
+      "formula": "historical Micro CAC/1348",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "micro.headroom": {
+      "key": "micro.headroom",
+      "value": 19.698113207547067,
+      "formula": "8088-matched Micro CAC",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Low.micro.delta_a": {
+      "key": "model.Low.micro.delta_a",
+      "value": 19.731623076923114,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Low.professional.delta_a": {
+      "key": "model.Low.professional.delta_a",
+      "value": 14.962205263157898,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Low.multisite.delta_a": {
+      "key": "model.Low.multisite.delta_a",
+      "value": 0.0,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Low.manufacturer.delta_a": {
+      "key": "model.Low.manufacturer.delta_a",
+      "value": 0.0,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Low.activations": {
+      "key": "model.Low.activations",
+      "value": 402.69382834008104,
+      "formula": "unchanged Phase3 formulas; see model output definition activations",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.quotes": {
+      "key": "model.Low.quotes",
+      "value": 900.5600000000001,
+      "formula": "unchanged Phase3 formulas; see model output definition quotes",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.delta_a": {
+      "key": "model.Low.delta_a",
+      "value": 34.69382834008104,
+      "formula": "unchanged Phase3 formulas; see model output definition delta_a",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.delta_mrr": {
+      "key": "model.Low.delta_mrr",
+      "value": 141874.17468761312,
+      "formula": "unchanged Phase3 formulas; see model output definition delta_mrr",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.starter_delta_mrr": {
+      "key": "model.Low.starter_delta_mrr",
+      "value": 79048.23845769238,
+      "formula": "unchanged Phase3 formulas; see model output definition starter_delta_mrr",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.handling": {
+      "key": "model.Low.handling",
+      "value": 115430.20973776396,
+      "formula": "unchanged Phase3 formulas; see model output definition handling",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.program": {
+      "key": "model.Low.program",
+      "value": 197800,
+      "formula": "unchanged Phase3 formulas; see model output definition program",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.added_cost": {
+      "key": "model.Low.added_cost",
+      "value": 313230.209737764,
+      "formula": "unchanged Phase3 formulas; see model output definition added_cost",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.cost": {
+      "key": "model.Low.cost",
+      "value": 5852870.209737764,
+      "formula": "unchanged Phase3 formulas; see model output definition cost",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.cac": {
+      "key": "model.Low.cac",
+      "value": 14534.293296382299,
+      "formula": "unchanged Phase3 formulas; see model output definition cac",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.payback": {
+      "key": "model.Low.payback",
+      "value": 1.2487816995737597,
+      "formula": "unchanged Phase3 formulas; see model output definition payback",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.conversion": {
+      "key": "model.Low.conversion",
+      "value": 8.053876566801621,
+      "formula": "unchanged Phase3 formulas; see model output definition conversion",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.quote_conversion": {
+      "key": "model.Low.quote_conversion",
+      "value": 44.71593545572544,
+      "formula": "unchanged Phase3 formulas; see model output definition quote_conversion",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.churn": {
+      "key": "model.Low.churn",
+      "value": 15.531520265939111,
+      "formula": "unchanged Phase3 formulas; see model output definition churn",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.calls": {
+      "key": "model.Low.calls",
+      "value": 3.0203743054076444,
+      "formula": "unchanged Phase3 formulas; see model output definition calls",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.digital": {
+      "key": "model.Low.digital",
+      "value": 45,
+      "formula": "unchanged Phase3 formulas; see model output definition digital",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.physical": {
+      "key": "model.Low.physical",
+      "value": 60,
+      "formula": "unchanged Phase3 formulas; see model output definition physical",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.marginal": {
+      "key": "model.Low.marginal",
+      "value": 9028.412969228184,
+      "formula": "unchanged Phase3 formulas; see model output definition marginal",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.stress_a": {
+      "key": "model.Low.stress_a",
+      "value": 346.69382834008104,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_a",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.stress_cac": {
+      "key": "model.Low.stress_cac",
+      "value": 16881.956733295323,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_cac",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.stress_payback": {
+      "key": "model.Low.stress_payback",
+      "value": 1.4938282691738942,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_payback",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Low.program_break_even": {
+      "key": "model.Low.program_break_even",
+      "value": 406828.8098976889,
+      "formula": "unchanged Phase3 formulas; see model output definition program_break_even",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.01, 0.03); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.micro.delta_a": {
+      "key": "model.Base.micro.delta_a",
+      "value": 41.088646153846156,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Base.professional.delta_a": {
+      "key": "model.Base.professional.delta_a",
+      "value": 30.672610526315793,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Base.multisite.delta_a": {
+      "key": "model.Base.multisite.delta_a",
+      "value": 0.0,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Base.manufacturer.delta_a": {
+      "key": "model.Base.manufacturer.delta_a",
+      "value": 0.0,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.Base.activations": {
+      "key": "model.Base.activations",
+      "value": 439.761256680162,
+      "formula": "unchanged Phase3 formulas; see model output definition activations",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.quotes": {
+      "key": "model.Base.quotes",
+      "value": 940.12,
+      "formula": "unchanged Phase3 formulas; see model output definition quotes",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.delta_a": {
+      "key": "model.Base.delta_a",
+      "value": 71.76125668016198,
+      "formula": "unchanged Phase3 formulas; see model output definition delta_a",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.delta_mrr": {
+      "key": "model.Base.delta_mrr",
+      "value": 292399.353928104,
+      "formula": "unchanged Phase3 formulas; see model output definition delta_mrr",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.starter_delta_mrr": {
+      "key": "model.Base.starter_delta_mrr",
+      "value": 162910.33121538465,
+      "formula": "unchanged Phase3 formulas; see model output definition starter_delta_mrr",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.handling": {
+      "key": "model.Base.handling",
+      "value": 238349.7395371878,
+      "formula": "unchanged Phase3 formulas; see model output definition handling",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.program": {
+      "key": "model.Base.program",
+      "value": 197800,
+      "formula": "unchanged Phase3 formulas; see model output definition program",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.added_cost": {
+      "key": "model.Base.added_cost",
+      "value": 436149.7395371878,
+      "formula": "unchanged Phase3 formulas; see model output definition added_cost",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.cost": {
+      "key": "model.Base.cost",
+      "value": 5975789.739537188,
+      "formula": "unchanged Phase3 formulas; see model output definition cost",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.cac": {
+      "key": "model.Base.cac",
+      "value": 13588.713532086742,
+      "formula": "unchanged Phase3 formulas; see model output definition cac",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.payback": {
+      "key": "model.Base.payback",
+      "value": 1.23533362777273,
+      "formula": "unchanged Phase3 formulas; see model output definition payback",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.conversion": {
+      "key": "model.Base.conversion",
+      "value": 8.795225133603239,
+      "formula": "unchanged Phase3 formulas; see model output definition conversion",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.quote_conversion": {
+      "key": "model.Base.quote_conversion",
+      "value": 46.777140862885794,
+      "formula": "unchanged Phase3 formulas; see model output definition quote_conversion",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.churn": {
+      "key": "model.Base.churn",
+      "value": 14.363735585596679,
+      "formula": "unchanged Phase3 formulas; see model output definition churn",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.calls": {
+      "key": "model.Base.calls",
+      "value": 2.665371512796247,
+      "formula": "unchanged Phase3 formulas; see model output definition calls",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.digital": {
+      "key": "model.Base.digital",
+      "value": 70,
+      "formula": "unchanged Phase3 formulas; see model output definition digital",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.physical": {
+      "key": "model.Base.physical",
+      "value": 75,
+      "formula": "unchanged Phase3 formulas; see model output definition physical",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.marginal": {
+      "key": "model.Base.marginal",
+      "value": 6077.788485242053,
+      "formula": "unchanged Phase3 formulas; see model output definition marginal",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.stress_a": {
+      "key": "model.Base.stress_a",
+      "value": 383.761256680162,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_a",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.stress_cac": {
+      "key": "model.Base.stress_cac",
+      "value": 15571.633758010097,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_cac",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.stress_payback": {
+      "key": "model.Base.stress_payback",
+      "value": 1.4687729045338112,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_payback",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.Base.program_break_even": {
+      "key": "model.Base.program_break_even",
+      "value": 841898.9777337164,
+      "formula": "unchanged Phase3 formulas; see model output definition program_break_even",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.02, 0.06); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.micro.delta_a": {
+      "key": "model.High.micro.delta_a",
+      "value": 64.07106923076924,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.High.professional.delta_a": {
+      "key": "model.High.professional.delta_a",
+      "value": 47.131215789473714,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.High.multisite.delta_a": {
+      "key": "model.High.multisite.delta_a",
+      "value": 0.0,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.High.manufacturer.delta_a": {
+      "key": "model.High.manufacturer.delta_a",
+      "value": 0.0,
+      "formula": "n*(q/n+d1)*(a/q+d2)-a; uplift only core",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "model.High.activations": {
+      "key": "model.High.activations",
+      "value": 479.2022850202429,
+      "formula": "unchanged Phase3 formulas; see model output definition activations",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.quotes": {
+      "key": "model.High.quotes",
+      "value": 979.6800000000001,
+      "formula": "unchanged Phase3 formulas; see model output definition quotes",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.delta_a": {
+      "key": "model.High.delta_a",
+      "value": 111.20228502024293,
+      "formula": "unchanged Phase3 formulas; see model output definition delta_a",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.delta_mrr": {
+      "key": "model.High.delta_mrr",
+      "value": 451575.5377214731,
+      "formula": "unchanged Phase3 formulas; see model output definition delta_mrr",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.starter_delta_mrr": {
+      "key": "model.High.starter_delta_mrr",
+      "value": 251586.27827307704,
+      "formula": "unchanged Phase3 formulas; see model output definition starter_delta_mrr",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.handling": {
+      "key": "model.High.handling",
+      "value": 368758.5893982719,
+      "formula": "unchanged Phase3 formulas; see model output definition handling",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.program": {
+      "key": "model.High.program",
+      "value": 197800,
+      "formula": "unchanged Phase3 formulas; see model output definition program",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.added_cost": {
+      "key": "model.High.added_cost",
+      "value": 566558.5893982719,
+      "formula": "unchanged Phase3 formulas; see model output definition added_cost",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.cost": {
+      "key": "model.High.cost",
+      "value": 6106198.589398272,
+      "formula": "unchanged Phase3 formulas; see model output definition cost",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.cac": {
+      "key": "model.High.cac",
+      "value": 12742.423774419874,
+      "formula": "unchanged Phase3 formulas; see model output definition cac",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.payback": {
+      "key": "model.High.payback",
+      "value": 1.222079154831383,
+      "formula": "unchanged Phase3 formulas; see model output definition payback",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.conversion": {
+      "key": "model.High.conversion",
+      "value": 9.58404570040486,
+      "formula": "unchanged Phase3 formulas; see model output definition conversion",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.quote_conversion": {
+      "key": "model.High.quote_conversion",
+      "value": 48.91416432102757,
+      "formula": "unchanged Phase3 formulas; see model output definition quote_conversion",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.churn": {
+      "key": "model.High.churn",
+      "value": 13.080612851143153,
+      "formula": "unchanged Phase3 formulas; see model output definition churn",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.calls": {
+      "key": "model.High.calls",
+      "value": 2.2870565020786526,
+      "formula": "unchanged Phase3 formulas; see model output definition calls",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.digital": {
+      "key": "model.High.digital",
+      "value": 85,
+      "formula": "unchanged Phase3 formulas; see model output definition digital",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.physical": {
+      "key": "model.High.physical",
+      "value": 85,
+      "formula": "unchanged Phase3 formulas; see model output definition physical",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.marginal": {
+      "key": "model.High.marginal",
+      "value": 5094.84665081421,
+      "formula": "unchanged Phase3 formulas; see model output definition marginal",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.stress_a": {
+      "key": "model.High.stress_a",
+      "value": 423.2022850202429,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_a",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.stress_cac": {
+      "key": "model.High.stress_cac",
+      "value": 14428.557702863529,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_cac",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.stress_payback": {
+      "key": "model.High.stress_payback",
+      "value": 1.4443189586757341,
+      "formula": "unchanged Phase3 formulas; see model output definition stress_payback",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "model.High.program_break_even": {
+      "key": "model.High.program_break_even",
+      "value": 1305210.503508083,
+      "formula": "unchanged Phase3 formulas; see model output definition program_break_even",
+      "source": "raw CSVs + scenario assumptions",
+      "label": "P",
+      "basis": "Core d1/d2=(0.03, 0.09); same-segment clean ARPU, activated-row cost proxy; retained baseline value"
+    },
+    "sensitivity.cac.200000": {
+      "key": "sensitivity.cac.200000",
+      "value": 13593.716246551876,
+      "formula": "(C0+handling+program)/Base A",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.payback.200000": {
+      "key": "sensitivity.payback.200000",
+      "value": 1.235788418536722,
+      "formula": "cost/(baseline MRR+clean ARPU delta)",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.cac.500000": {
+      "key": "sensitivity.cac.500000",
+      "value": 14275.904582706713,
+      "formula": "(C0+handling+program)/Base A",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.payback.500000": {
+      "key": "sensitivity.payback.500000",
+      "value": 1.2978053408992751,
+      "formula": "cost/(baseline MRR+clean ARPU delta)",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.cac.841899": {
+      "key": "sensitivity.cac.841899",
+      "value": 15053.369565217394,
+      "formula": "(C0+handling+program)/Base A",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.payback.841899": {
+      "key": "sensitivity.payback.841899",
+      "value": 1.3684837487591024,
+      "formula": "cost/(baseline MRR+clean ARPU delta)",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.cac.1000000": {
+      "key": "sensitivity.cac.1000000",
+      "value": 15412.885142964777,
+      "formula": "(C0+handling+program)/Base A",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.payback.1000000": {
+      "key": "sensitivity.payback.1000000",
+      "value": 1.401166878170197,
+      "formula": "cost/(baseline MRR+clean ARPU delta)",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.cac.2000000": {
+      "key": "sensitivity.cac.2000000",
+      "value": 17686.8462634809,
+      "formula": "(C0+handling+program)/Base A",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "sensitivity.payback.2000000": {
+      "key": "sensitivity.payback.2000000",
+      "value": 1.6078899527120405,
+      "formula": "cost/(baseline MRR+clean ARPU delta)",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.history.1": {
+      "key": "run_rate.history.1",
+      "value": 292399.353928104,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.starter.1": {
+      "key": "run_rate.starter.1",
+      "value": 162910.33121538465,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.history.2": {
+      "key": "run_rate.history.2",
+      "value": 584798.707856208,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.starter.2": {
+      "key": "run_rate.starter.2",
+      "value": 325820.6624307693,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.history.3": {
+      "key": "run_rate.history.3",
+      "value": 877198.0617843119,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.starter.3": {
+      "key": "run_rate.starter.3",
+      "value": 488730.99364615395,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.history.4": {
+      "key": "run_rate.history.4",
+      "value": 1169597.415712416,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "run_rate.starter.4": {
+      "key": "run_rate.starter.4",
+      "value": 651641.3248615386,
+      "formula": "cohorts*incremental MRR, no churn; not collected ARR",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.micro.base_added_a": {
+      "key": "reason_crosscheck.micro.base_added_a",
+      "value": 41.088646153846156,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.micro.extra_accepted_quotes": {
+      "key": "reason_crosscheck.micro.extra_accepted_quotes",
+      "value": 54.18,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.micro.implied_quote_pool_recovery": {
+      "key": "reason_crosscheck.micro.implied_quote_pool_recovery",
+      "value": 0.22388429752066116,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.micro.implied_postquote_recovery": {
+      "key": "reason_crosscheck.micro.implied_postquote_recovery",
+      "value": 0.10581767441860464,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.micro.visit_pool": {
+      "key": "reason_crosscheck.micro.visit_pool",
+      "value": 484,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.micro.quote_pool": {
+      "key": "reason_crosscheck.micro.quote_pool",
+      "value": 242,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.micro.visit_downstream_activation": {
+      "key": "reason_crosscheck.micro.visit_downstream_activation",
+      "value": 0.05936319481921209,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.micro.quote_downstream_activation": {
+      "key": "reason_crosscheck.micro.quote_downstream_activation",
+      "value": 0.10912698412698413,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.micro.equal_pool_recovery_to_match_base": {
+      "key": "reason_crosscheck.micro.equal_pool_recovery_to_match_base",
+      "value": 0.7451625192917557,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.micro.alternative_added_a_at_20pct": {
+      "key": "reason_crosscheck.micro.alternative_added_a_at_20pct",
+      "value": 11.028103290245761,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.professional.base_added_a": {
+      "key": "reason_crosscheck.professional.base_added_a",
+      "value": 30.672610526315793,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.professional.extra_accepted_quotes": {
+      "key": "reason_crosscheck.professional.extra_accepted_quotes",
+      "value": 24.94,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.professional.implied_quote_pool_recovery": {
+      "key": "reason_crosscheck.professional.implied_quote_pool_recovery",
+      "value": 0.3041463414634146,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.professional.implied_postquote_recovery": {
+      "key": "reason_crosscheck.professional.implied_postquote_recovery",
+      "value": 0.12650612244897957,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.professional.visit_pool": {
+      "key": "reason_crosscheck.professional.visit_pool",
+      "value": 190,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.professional.quote_pool": {
+      "key": "reason_crosscheck.professional.quote_pool",
+      "value": 82,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.professional.visit_downstream_activation": {
+      "key": "reason_crosscheck.professional.visit_downstream_activation",
+      "value": 0.1597222222222222,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.professional.quote_downstream_activation": {
+      "key": "reason_crosscheck.professional.quote_downstream_activation",
+      "value": 0.25650557620817843,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "reason_crosscheck.professional.equal_pool_recovery_to_match_base": {
+      "key": "reason_crosscheck.professional.equal_pool_recovery_to_match_base",
+      "value": 0.5969677871514533,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "reason_crosscheck.professional.alternative_added_a_at_20pct": {
+      "key": "reason_crosscheck.professional.alternative_added_a_at_20pct",
+      "value": 10.276135894258571,
+      "formula": "explicit disjoint stage pools * historical downstream conversion; assumptions not causal evidence",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.p0_tier": {
+      "key": "pilot.p0_tier",
+      "value": 0.06268361833695038,
+      "formula": "original four stratum quotas /1200",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.p0_segment": {
+      "key": "pilot.p0_segment",
+      "value": 0.06267435495984013,
+      "formula": "822/1200*110/2709 +378/1200*138/1247",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.mde_pp": {
+      "key": "pilot.mde_pp",
+      "value": 4.5123606091014965,
+      "formula": "normal two-proportion alpha .05 n600/arm target .8",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.base_lift_pp": {
+      "key": "pilot.base_lift_pp",
+      "value": 1.81458196509571,
+      "formula": "Base core activation rate - weighted planning control",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.base_power_pct": {
+      "key": "pilot.base_power_pct",
+      "value": 22.959169016032916,
+      "formula": "same approximate power at Base core effect",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.n.core.0.01": {
+      "key": "pilot.n.core.0.01",
+      "value": 9905,
+      "formula": "smallest integer n/arm with normal approximate power>=.8; no clustering/attrition adjustment",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.n.core.0.02": {
+      "key": "pilot.n.core.0.02",
+      "value": 2644,
+      "formula": "smallest integer n/arm with normal approximate power>=.8; no clustering/attrition adjustment",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.n.professional.0.01": {
+      "key": "pilot.n.professional.0.01",
+      "value": 16056,
+      "formula": "smallest integer n/arm with normal approximate power>=.8; no clustering/attrition adjustment",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.n.professional.0.02": {
+      "key": "pilot.n.professional.0.02",
+      "value": 4163,
+      "formula": "smallest integer n/arm with normal approximate power>=.8; no clustering/attrition adjustment",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.n.core_segment.0.01": {
+      "key": "pilot.n.core_segment.0.01",
+      "value": 9904,
+      "formula": "smallest integer n/arm with normal approximate power>=.8; no clustering/attrition adjustment",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.n.core_segment.0.02": {
+      "key": "pilot.n.core_segment.0.02",
+      "value": 2644,
+      "formula": "smallest integer n/arm with normal approximate power>=.8; no clustering/attrition adjustment",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.n_total": {
+      "key": "pilot.n_total",
+      "value": 1200,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.n_arm": {
+      "key": "pilot.n_arm",
+      "value": 600,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.micro": {
+      "key": "pilot.micro",
+      "value": 822,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.professional": {
+      "key": "pilot.professional",
+      "value": 378,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.days": {
+      "key": "pilot.days",
+      "value": 90,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.window": {
+      "key": "pilot.window",
+      "value": 30,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.digital_gate": {
+      "key": "pilot.digital_gate",
+      "value": 70,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.log_gate": {
+      "key": "pilot.log_gate",
+      "value": 95,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "pilot.unsafe": {
+      "key": "pilot.unsafe",
+      "value": 0,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "micro.cac_gate": {
+      "key": "micro.cac_gate",
+      "value": 8088,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "model.program_per_core_lead": {
+      "key": "model.program_per_core_lead",
+      "value": 50,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "model.core_n": {
+      "key": "model.core_n",
+      "value": 3956,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "model.setup": {
+      "key": "model.setup",
+      "value": 100000,
+      "formula": "retained v2 planning design",
+      "source": "analysis/baseline/03_pilot_design.json + v2",
+      "label": "A",
+      "basis": "Proposed, not achieved"
+    },
+    "case.quote_days_min": {
+      "key": "case.quote_days_min",
+      "value": 3,
+      "formula": "case PDF p2",
+      "source": "Airtel_SYNC_Case.pdf p2",
+      "label": "V"
+    },
+    "case.quote_days_max": {
+      "key": "case.quote_days_max",
+      "value": 5,
+      "formula": "case PDF p2",
+      "source": "Airtel_SYNC_Case.pdf p2",
+      "label": "V"
+    },
+    "pool.kyc_paperwork": {
+      "key": "pool.kyc_paperwork",
+      "value": 273,
+      "formula": "quote accepted minus KYC complete",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "pool.fulfilment_payment": {
+      "key": "pool.fulfilment_payment",
+      "value": 220,
+      "formula": "KYC complete minus activated",
+      "source": "smb_leads.csv",
+      "label": "V"
+    },
+    "assumption.bundle.professional.tier": {
+      "key": "assumption.bundle.professional.tier",
+      "value": 2,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.professional.employees": {
+      "key": "assumption.bundle.professional.employees",
+      "value": 5,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.professional.sites": {
+      "key": "assumption.bundle.professional.sites",
+      "value": 1,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.professional.quantity.P02": {
+      "key": "assumption.bundle.professional.quantity.P02",
+      "value": 1,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.professional.quantity.P09": {
+      "key": "assumption.bundle.professional.quantity.P09",
+      "value": 1,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.professional.quantity.P16": {
+      "key": "assumption.bundle.professional.quantity.P16",
+      "value": 5,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.professional.quantity.P20": {
+      "key": "assumption.bundle.professional.quantity.P20",
+      "value": 5,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.micro.tier": {
+      "key": "assumption.bundle.micro.tier",
+      "value": 2,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.micro.employees": {
+      "key": "assumption.bundle.micro.employees",
+      "value": 1,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.micro.sites": {
+      "key": "assumption.bundle.micro.sites",
+      "value": 1,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.micro.quantity.P04": {
+      "key": "assumption.bundle.micro.quantity.P04",
+      "value": 1,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.micro.quantity.P07": {
+      "key": "assumption.bundle.micro.quantity.P07",
+      "value": 1,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.multisite.tier": {
+      "key": "assumption.bundle.multisite.tier",
+      "value": 2,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.multisite.employees": {
+      "key": "assumption.bundle.multisite.employees",
+      "value": 10,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.multisite.sites": {
+      "key": "assumption.bundle.multisite.sites",
+      "value": 3,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.multisite.quantity.P02": {
+      "key": "assumption.bundle.multisite.quantity.P02",
+      "value": 3,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.multisite.quantity.P09": {
+      "key": "assumption.bundle.multisite.quantity.P09",
+      "value": 3,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.multisite.quantity.P10": {
+      "key": "assumption.bundle.multisite.quantity.P10",
+      "value": 3,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.manufacturer.tier": {
+      "key": "assumption.bundle.manufacturer.tier",
+      "value": 2,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.manufacturer.employees": {
+      "key": "assumption.bundle.manufacturer.employees",
+      "value": 10,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.manufacturer.sites": {
+      "key": "assumption.bundle.manufacturer.sites",
+      "value": 1,
+      "formula": "illustrative eligible profile, checked against supplied catalogue",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.manufacturer.quantity.P05": {
+      "key": "assumption.bundle.manufacturer.quantity.P05",
+      "value": 1,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.manufacturer.quantity.P21": {
+      "key": "assumption.bundle.manufacturer.quantity.P21",
+      "value": 1,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.bundle.manufacturer.quantity.P24": {
+      "key": "assumption.bundle.manufacturer.quantity.P24",
+      "value": 10,
+      "formula": "chosen SKU quantity; price arithmetic uses this same quantity",
+      "source": "catalogue + explicit bundle choice",
+      "label": "A"
+    },
+    "assumption.model.Low.acceptance_uplift_pp": {
+      "key": "assumption.model.Low.acceptance_uplift_pp",
+      "value": 1,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.Low.activation_uplift_pp": {
+      "key": "assumption.model.Low.activation_uplift_pp",
+      "value": 3,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.Low.churn_cut_pp": {
+      "key": "assumption.model.Low.churn_cut_pp",
+      "value": 0,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.Low.call_cut": {
+      "key": "assumption.model.Low.call_cut",
+      "value": 0,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.Base.acceptance_uplift_pp": {
+      "key": "assumption.model.Base.acceptance_uplift_pp",
+      "value": 2,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.Base.activation_uplift_pp": {
+      "key": "assumption.model.Base.activation_uplift_pp",
+      "value": 6,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.Base.churn_cut_pp": {
+      "key": "assumption.model.Base.churn_cut_pp",
+      "value": 2,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.Base.call_cut": {
+      "key": "assumption.model.Base.call_cut",
+      "value": 0.5,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.High.acceptance_uplift_pp": {
+      "key": "assumption.model.High.acceptance_uplift_pp",
+      "value": 3,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.High.activation_uplift_pp": {
+      "key": "assumption.model.High.activation_uplift_pp",
+      "value": 9,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.High.churn_cut_pp": {
+      "key": "assumption.model.High.churn_cut_pp",
+      "value": 4,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "assumption.model.High.call_cut": {
+      "key": "assumption.model.High.call_cut",
+      "value": 1,
+      "formula": "retained v2 scenario parameter, core segments only",
+      "source": "analysis/baseline/03_business_model.json + v2",
+      "label": "A"
+    },
+    "pilot.setup_start": {
+      "key": "pilot.setup_start",
+      "value": 1,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.setup_end": {
+      "key": "pilot.setup_end",
+      "value": 14,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.intake_start": {
+      "key": "pilot.intake_start",
+      "value": 15,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.intake_end": {
+      "key": "pilot.intake_end",
+      "value": 59,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.followup_start": {
+      "key": "pilot.followup_start",
+      "value": 60,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.followup_end": {
+      "key": "pilot.followup_end",
+      "value": 90,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.min_tier": {
+      "key": "pilot.min_tier",
+      "value": 1,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.max_tier": {
+      "key": "pilot.max_tier",
+      "value": 2,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.lock_minutes": {
+      "key": "pilot.lock_minutes",
+      "value": 10,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.mature_months": {
+      "key": "pilot.mature_months",
+      "value": 6,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.process_true_pct": {
+      "key": "pilot.process_true_pct",
+      "value": 75,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "pilot.process_bad_pct": {
+      "key": "pilot.process_bad_pct",
+      "value": 60,
+      "formula": "explicit retained pilot calendar/gate or new process-planning alternative",
+      "source": "v2 + evaluation/business_case_evidence.md",
+      "label": "A"
+    },
+    "quote.add_line_mid": {
+      "key": "quote.add_line_mid",
+      "value": 349.0,
+      "formula": "P07 unit midpoint; no discount",
+      "source": "product_catalogue.csv",
+      "label": "A"
+    },
+    "quote.airfiber_mid": {
+      "key": "quote.airfiber_mid",
+      "value": 999.0,
+      "formula": "P04 unit midpoint; no discount",
+      "source": "product_catalogue.csv",
+      "label": "A"
+    },
+    "competitor.vi.contact_hours": {
+      "key": "competitor.vi.contact_hours",
+      "value": 48,
+      "formula": "public page: representative contacts within48hours, not completed KYC",
+      "source": "https://www.myvi.in/business/enterprise-mobility/corporate-postpaid-plans ;access2026-11-08",
+      "label": "E"
+    },
+    "model.program_allowance": {
+      "key": "model.program_allowance",
+      "value": 197800,
+      "formula": "retained INR50 per core lead *3956 core leads",
+      "source": "v2 planning allowance",
+      "label": "A"
+    },
+    "assumption.sensitivity.program.200000": {
+      "key": "assumption.sensitivity.program.200000",
+      "value": 200000,
+      "formula": "scenario input for program-spend sensitivity, not observed cost",
+      "source": "explicit sensitivity choice",
+      "label": "A"
+    },
+    "assumption.sensitivity.program.500000": {
+      "key": "assumption.sensitivity.program.500000",
+      "value": 500000,
+      "formula": "scenario input for program-spend sensitivity, not observed cost",
+      "source": "explicit sensitivity choice",
+      "label": "A"
+    },
+    "assumption.sensitivity.program.1000000": {
+      "key": "assumption.sensitivity.program.1000000",
+      "value": 1000000,
+      "formula": "scenario input for program-spend sensitivity, not observed cost",
+      "source": "explicit sensitivity choice",
+      "label": "A"
+    },
+    "assumption.sensitivity.program.2000000": {
+      "key": "assumption.sensitivity.program.2000000",
+      "value": 2000000,
+      "formula": "scenario input for program-spend sensitivity, not observed cost",
+      "source": "explicit sensitivity choice",
+      "label": "A"
+    },
+    "cost_build.hosting": {
+      "key": "cost_build.hosting",
+      "value": 1890,
+      "formula": "dated public USD hosting reference or explicit planning allocation; see evaluation/business_case_evidence.md",
+      "source": "Render public pricing + A planning quantities/rates + T2 specimen hold share",
+      "label": "A",
+      "basis": "Not a vendor quote or observed operating cost; specimen hold share used as stress, not population estimate"
+    },
+    "cost_build.storage": {
+      "key": "cost_build.storage",
+      "value": 3000,
+      "formula": "dated public USD hosting reference or explicit planning allocation; see evaluation/business_case_evidence.md",
+      "source": "Render public pricing + A planning quantities/rates + T2 specimen hold share",
+      "label": "A",
+      "basis": "Not a vendor quote or observed operating cost; specimen hold share used as stress, not population estimate"
+    },
+    "cost_build.ocr_compute": {
+      "key": "cost_build.ocr_compute",
+      "value": 7912,
+      "formula": "dated public USD hosting reference or explicit planning allocation; see evaluation/business_case_evidence.md",
+      "source": "Render public pricing + A planning quantities/rates + T2 specimen hold share",
+      "label": "A",
+      "basis": "Not a vendor quote or observed operating cost; specimen hold share used as stress, not population estimate"
+    },
+    "cost_build.future_inference": {
+      "key": "cost_build.future_inference",
+      "value": 7912,
+      "formula": "dated public USD hosting reference or explicit planning allocation; see evaluation/business_case_evidence.md",
+      "source": "Render public pricing + A planning quantities/rates + T2 specimen hold share",
+      "label": "A",
+      "basis": "Not a vendor quote or observed operating cost; specimen hold share used as stress, not population estimate"
+    },
+    "cost_build.messaging": {
+      "key": "cost_build.messaging",
+      "value": 3956,
+      "formula": "dated public USD hosting reference or explicit planning allocation; see evaluation/business_case_evidence.md",
+      "source": "Render public pricing + A planning quantities/rates + T2 specimen hold share",
+      "label": "A",
+      "basis": "Not a vendor quote or observed operating cost; specimen hold share used as stress, not population estimate"
+    },
+    "cost_build.review": {
+      "key": "cost_build.review",
+      "value": 94943.99999999999,
+      "formula": "dated public USD hosting reference or explicit planning allocation; see evaluation/business_case_evidence.md",
+      "source": "Render public pricing + A planning quantities/rates + T2 specimen hold share",
+      "label": "A",
+      "basis": "Not a vendor quote or observed operating cost; specimen hold share used as stress, not population estimate"
+    },
+    "cost_build.security_ops": {
+      "key": "cost_build.security_ops",
+      "value": 20000,
+      "formula": "dated public USD hosting reference or explicit planning allocation; see evaluation/business_case_evidence.md",
+      "source": "Render public pricing + A planning quantities/rates + T2 specimen hold share",
+      "label": "A",
+      "basis": "Not a vendor quote or observed operating cost; specimen hold share used as stress, not population estimate"
+    },
+    "cost_build.subtotal": {
+      "key": "cost_build.subtotal",
+      "value": 139614.0,
+      "formula": "sum planning components",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.total": {
+      "key": "cost_build.total",
+      "value": 174517.5,
+      "formula": "subtotal*1.25 contingency",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.hold_share": {
+      "key": "cost_build.hold_share",
+      "value": 0.6666666666666666,
+      "formula": "automatic held supplied packets/12",
+      "source": "T2 measured synthetic packets",
+      "label": "V-proto"
+    },
+    "cost_stress.3.0.2500": {
+      "key": "cost_stress.3.0.2500",
+      "value": 78090.00000000001,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.3.0.5000": {
+      "key": "cost_stress.3.0.5000",
+      "value": 100342.50000000001,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.3.0.6667": {
+      "key": "cost_stress.3.0.6667",
+      "value": 115177.5,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.3.1.0000": {
+      "key": "cost_stress.3.1.0000",
+      "value": 144847.50000000003,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.6.0.2500": {
+      "key": "cost_stress.6.0.2500",
+      "value": 100342.50000000001,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.6.0.5000": {
+      "key": "cost_stress.6.0.5000",
+      "value": 144847.50000000003,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.6.0.6667": {
+      "key": "cost_stress.6.0.6667",
+      "value": 174517.5,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.6.1.0000": {
+      "key": "cost_stress.6.1.0000",
+      "value": 233857.5,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.12.0.2500": {
+      "key": "cost_stress.12.0.2500",
+      "value": 144847.50000000003,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.12.0.5000": {
+      "key": "cost_stress.12.0.5000",
+      "value": 233857.5,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.12.0.6667": {
+      "key": "cost_stress.12.0.6667",
+      "value": 293197.5,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "cost_stress.12.1.0000": {
+      "key": "cost_stress.12.1.0000",
+      "value": 411877.5,
+      "formula": "substitute held fraction *minutes*INR6/min, plus other costs and25% reserve",
+      "source": "smb_leads.csv",
+      "label": "P"
+    },
+    "pilot.process_n": {
+      "key": "pilot.process_n",
+      "value": 323,
+      "formula": "ceil(z.975^2*.7*.3/.05^2), about5pp95% precision",
+      "source": "process planning",
+      "label": "P"
+    },
+    "pilot.process_power_pct": {
+      "key": "pilot.process_power_pct",
+      "value": 97.69301034776224,
+      "formula": "P(Bin(n323,p.75)>=ceil(.7*n323)); hypothetical alternative",
+      "source": "process planning",
+      "label": "P"
+    },
+    "pilot.process_false_go_pct": {
+      "key": "pilot.process_false_go_pct",
+      "value": 0.007905119350017477,
+      "formula": "P(Bin(n323,p.60)>=ceil(.7*n323)); hypothetical unacceptable rate",
+      "source": "process planning",
+      "label": "P"
+    },
+    "pilot.process_power_at_target_pct": {
+      "key": "pilot.process_power_at_target_pct",
+      "value": 48.38619938325373,
+      "formula": "Probability of meeting70% point gate when true rate equals70%; not80%",
+      "source": "process planning",
+      "label": "P"
+    },
+    "retention.raw_days": {
+      "key": "retention.raw_days",
+      "value": 365,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "retention.receipt_days": {
+      "key": "retention.receipt_days",
+      "value": 365,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "retention.log_days": {
+      "key": "retention.log_days",
+      "value": 365,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "retention.abandoned_days": {
+      "key": "retention.abandoned_days",
+      "value": 1,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.fx_inr_usd": {
+      "key": "cost_build.fx_inr_usd",
+      "value": 90,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.host_usd_month": {
+      "key": "cost_build.host_usd_month",
+      "value": 7,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "E"
+    },
+    "cost_build.months": {
+      "key": "cost_build.months",
+      "value": 3,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.storage_gb": {
+      "key": "cost_build.storage_gb",
+      "value": 20,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.storage_inr_gb_month": {
+      "key": "cost_build.storage_inr_gb_month",
+      "value": 50,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.review_minutes": {
+      "key": "cost_build.review_minutes",
+      "value": 6,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.review_inr_minute": {
+      "key": "cost_build.review_inr_minute",
+      "value": 6,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    },
+    "cost_build.contingency_pct": {
+      "key": "cost_build.contingency_pct",
+      "value": 25,
+      "formula": "Explicit planning policy or dated hosting reference; legal/operational review required",
+      "source": "smb_leads.csv",
+      "label": "A"
+    }
+  },
+  "scenarios": {
+    "Low": {
+      "activations": 402.69382834008104,
+      "quotes": 900.5600000000001,
+      "delta_a": 34.69382834008104,
+      "delta_mrr": 141874.17468761312,
+      "starter_delta_mrr": 79048.23845769238,
+      "handling": 115430.20973776396,
+      "program": 197800,
+      "added_cost": 313230.209737764,
+      "cost": 5852870.209737764,
+      "cac": 14534.293296382299,
+      "payback": 1.2487816995737597,
+      "conversion": 8.053876566801621,
+      "quote_conversion": 44.71593545572544,
+      "churn": 15.531520265939111,
+      "calls": 3.0203743054076444,
+      "digital": 45,
+      "physical": 60,
+      "marginal": 9028.412969228184,
+      "stress_a": 346.69382834008104,
+      "stress_cac": 16881.956733295323,
+      "stress_payback": 1.4938282691738942,
+      "program_break_even": 406828.8098976889
+    },
+    "Base": {
+      "activations": 439.761256680162,
+      "quotes": 940.12,
+      "delta_a": 71.76125668016198,
+      "delta_mrr": 292399.353928104,
+      "starter_delta_mrr": 162910.33121538465,
+      "handling": 238349.7395371878,
+      "program": 197800,
+      "added_cost": 436149.7395371878,
+      "cost": 5975789.739537188,
+      "cac": 13588.713532086742,
+      "payback": 1.23533362777273,
+      "conversion": 8.795225133603239,
+      "quote_conversion": 46.777140862885794,
+      "churn": 14.363735585596679,
+      "calls": 2.665371512796247,
+      "digital": 70,
+      "physical": 75,
+      "marginal": 6077.788485242053,
+      "stress_a": 383.761256680162,
+      "stress_cac": 15571.633758010097,
+      "stress_payback": 1.4687729045338112,
+      "program_break_even": 841898.9777337164
+    },
+    "High": {
+      "activations": 479.2022850202429,
+      "quotes": 979.6800000000001,
+      "delta_a": 111.20228502024293,
+      "delta_mrr": 451575.5377214731,
+      "starter_delta_mrr": 251586.27827307704,
+      "handling": 368758.5893982719,
+      "program": 197800,
+      "added_cost": 566558.5893982719,
+      "cost": 6106198.589398272,
+      "cac": 12742.423774419874,
+      "payback": 1.222079154831383,
+      "conversion": 9.58404570040486,
+      "quote_conversion": 48.91416432102757,
+      "churn": 13.080612851143153,
+      "calls": 2.2870565020786526,
+      "digital": 85,
+      "physical": 85,
+      "marginal": 5094.84665081421,
+      "stress_a": 423.2022850202429,
+      "stress_cac": 14428.557702863529,
+      "stress_payback": 1.4443189586757341,
+      "program_break_even": 1305210.503508083
+    }
+  },
+  "segments": {
+    "micro": {
+      "n": 2709,
+      "a": 110,
+      "q": 325,
+      "cost": 2200780.0,
+      "mrr": 275530.0,
+      "proxy": 2688.4545454545455,
+      "churn": 0.22727272727272727,
+      "calls": 3.1636363636363636,
+      "clean_arpu": 2436.893203883495
+    },
+    "professional": {
+      "n": 1247,
+      "a": 138,
+      "q": 285,
+      "cost": 1475870.0,
+      "mrr": 937830.0,
+      "proxy": 4169.347826086957,
+      "churn": 0.13768115942028986,
+      "calls": 3.0652173913043477,
+      "clean_arpu": 6268.482142857143
+    },
+    "multisite": {
+      "n": 755,
+      "a": 83,
+      "q": 168,
+      "cost": 1295990.0,
+      "mrr": 2592380.0,
+      "proxy": 9099.036144578313,
+      "churn": 0.10843373493975904,
+      "calls": 2.783132530120482,
+      "clean_arpu": 31077.30769230769
+    },
+    "manufacturer": {
+      "n": 289,
+      "a": 37,
+      "q": 83,
+      "cost": 567000.0,
+      "mrr": 739250.0,
+      "proxy": 9606.216216216217,
+      "churn": 0.08108108108108109,
+      "calls": 2.864864864864865,
+      "clean_arpu": 21003.157894736843
+    }
+  },
+  "bundles": {
+    "professional": {
+      "P02": 1,
+      "P09": 1,
+      "P16": 5,
+      "P20": 5
+    },
+    "micro": {
+      "P04": 1,
+      "P07": 1
+    },
+    "multisite": {
+      "P02": 3,
+      "P09": 3,
+      "P10": 3
+    },
+    "manufacturer": {
+      "P05": 1,
+      "P21": 1,
+      "P24": 10
+    }
+  },
+  "rule_conflict_ids": {
+    "L00086": [
+      "employees"
+    ],
+    "L00207": [
+      "tier"
+    ],
+    "L00242": [
+      "tier"
+    ],
+    "L00355": [
+      "tier",
+      "gst"
+    ],
+    "L00627": [
+      "gst"
+    ],
+    "L00674": [
+      "tier"
+    ],
+    "L00751": [
+      "tier"
+    ],
+    "L00764": [
+      "gst",
+      "gst"
+    ],
+    "L00974": [
+      "gst"
+    ],
+    "L00983": [
+      "employees"
+    ],
+    "L01045": [
+      "employees"
+    ],
+    "L01079": [
+      "employees"
+    ],
+    "L01089": [
+      "dependency"
+    ],
+    "L01104": [
+      "dependency"
+    ],
+    "L01138": [
+      "tier"
+    ],
+    "L01199": [
+      "employees"
+    ],
+    "L01464": [
+      "tier"
+    ],
+    "L01511": [
+      "dependency"
+    ],
+    "L01739": [
+      "gst"
+    ],
+    "L01817": [
+      "tier",
+      "employees"
+    ],
+    "L01828": [
+      "tier"
+    ],
+    "L01851": [
+      "tier"
+    ],
+    "L02014": [
+      "tier",
+      "employees"
+    ],
+    "L02358": [
+      "gst"
+    ],
+    "L02374": [
+      "gst"
+    ],
+    "L02588": [
+      "dependency",
+      "gst"
+    ],
+    "L02841": [
+      "gst"
+    ],
+    "L02859": [
+      "tier"
+    ],
+    "L02870": [
+      "tier"
+    ],
+    "L02943": [
+      "dependency"
+    ],
+    "L03010": [
+      "dependency"
+    ],
+    "L03058": [
+      "gst"
+    ],
+    "L03221": [
+      "gst"
+    ],
+    "L03292": [
+      "gst"
+    ],
+    "L03364": [
+      "gst"
+    ],
+    "L03419": [
+      "dependency"
+    ],
+    "L03473": [
+      "tier"
+    ],
+    "L03516": [
+      "tier",
+      "gst"
+    ],
+    "L03673": [
+      "tier"
+    ],
+    "L03688": [
+      "gst"
+    ],
+    "L03774": [
+      "tier",
+      "gst"
+    ],
+    "L03842": [
+      "gst"
+    ],
+    "L03872": [
+      "tier"
+    ],
+    "L04070": [
+      "gst"
+    ],
+    "L04272": [
+      "tier"
+    ],
+    "L04350": [
+      "dependency"
+    ],
+    "L04431": [
+      "gst"
+    ],
+    "L04451": [
+      "tier"
+    ],
+    "L04464": [
+      "tier"
+    ],
+    "L04566": [
+      "tier"
+    ],
+    "L04596": [
+      "tier"
+    ],
+    "L04880": [
+      "gst"
+    ],
+    "L04888": [
+      "gst"
+    ],
+    "L04911": [
+      "tier"
+    ],
+    "L04948": [
+      "employees"
+    ],
+    "L04991": [
+      "dependency"
+    ]
+  },
+  "reason_crosscheck": {
+    "micro": {
+      "base_added_a": 41.088646153846156,
+      "extra_accepted_quotes": 54.18,
+      "implied_quote_pool_recovery": 0.22388429752066116,
+      "implied_postquote_recovery": 0.10581767441860464,
+      "visit_pool": 484,
+      "quote_pool": 242,
+      "visit_downstream_activation": 0.05936319481921209,
+      "quote_downstream_activation": 0.10912698412698413,
+      "equal_pool_recovery_to_match_base": 0.7451625192917557,
+      "alternative_added_a_at_20pct": 11.028103290245761
+    },
+    "professional": {
+      "base_added_a": 30.672610526315793,
+      "extra_accepted_quotes": 24.94,
+      "implied_quote_pool_recovery": 0.3041463414634146,
+      "implied_postquote_recovery": 0.12650612244897957,
+      "visit_pool": 190,
+      "quote_pool": 82,
+      "visit_downstream_activation": 0.1597222222222222,
+      "quote_downstream_activation": 0.25650557620817843,
+      "equal_pool_recovery_to_match_base": 0.5969677871514533,
+      "alternative_added_a_at_20pct": 10.276135894258571
+    }
+  },
+  "discrepancies": [
+    {
+      "item": "pilot planning rate",
+      "review": 0.062674,
+      "actual_tier_weighted": 0.06268361833695038,
+      "actual_segment_weighted": 0.06267435495984013,
+      "reason": "Review collapses city tiers; v2 used four fixed segment x tier quotas. Both +2pp calculations round to2644/arm; +1pp differs9905 vs9904. Retain tier-weighted v2 baseline."
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "scope": "Phase3 pilot design proposal only; no study conducted",
+  "source": "C:\\Users\\kunda\\OneDrive\\Desktop\\Airtel Hackathon\\work\\extracted\\YTL_TrackA_Udyam_Digital_Data\\smb_leads.csv",
+  "source_sha256": "b2521e8cedcf3b5775a087d40d07f548afbe3e7094a9fbad3a3908ffb01120ea",
+  "reference_date": "2026-07-15",
+  "core_baseline": {
+    "tag": "VERIFIED supplied synthetic full-file cohort",
+    "leads": 3956,
+    "activations": 248,
+    "accepted_quotes": 610,
+    "activation_pct": 6.268958543983821,
+    "quote_acceptance_pct": 15.419615773508594,
+    "accepted_quote_to_activation_pct": 40.65573770491803,
+    "recorded_churn_count": 44,
+    "recorded_churn_pct": 17.741935483870968,
+    "activated_followup_calls_mean": 3.1088709677419355,
+    "activation_count_dated_on_or_before_reference": 241,
+    "acquisition_spend_inr": 3676650,
+    "cac_inr": 14825.201612903225
+  },
+  "strata": [
+    {
+      "historical_tag": "VERIFIED",
+      "future_quota_tag": "ASSUMPTION",
+      "segment": "Micro retail & services",
+      "city_tier": 1,
+      "historical_leads": 1407,
+      "historical_activations": 71,
+      "historical_accepted_quotes": 182,
+      "historical_activation_pct": 5.046197583511016,
+      "proposed_total_quota": 428,
+      "proposed_treatment_quota": 214,
+      "proposed_control_quota": 214
+    },
+    {
+      "historical_tag": "VERIFIED",
+      "future_quota_tag": "ASSUMPTION",
+      "segment": "Micro retail & services",
+      "city_tier": 2,
+      "historical_leads": 1302,
+      "historical_activations": 39,
+      "historical_accepted_quotes": 143,
+      "historical_activation_pct": 2.995391705069124,
+      "proposed_total_quota": 394,
+      "proposed_treatment_quota": 197,
+      "proposed_control_quota": 197
+    },
+    {
+      "historical_tag": "VERIFIED",
+      "future_quota_tag": "ASSUMPTION",
+      "segment": "Professional offices",
+      "city_tier": 1,
+      "historical_leads": 641,
+      "historical_activations": 82,
+      "historical_accepted_quotes": 145,
+      "historical_activation_pct": 12.792511700468017,
+      "proposed_total_quota": 194,
+      "proposed_treatment_quota": 97,
+      "proposed_control_quota": 97
+    },
+    {
+      "historical_tag": "VERIFIED",
+      "future_quota_tag": "ASSUMPTION",
+      "segment": "Professional offices",
+      "city_tier": 2,
+      "historical_leads": 606,
+      "historical_activations": 56,
+      "historical_accepted_quotes": 140,
+      "historical_activation_pct": 9.24092409240924,
+      "proposed_total_quota": 184,
+      "proposed_treatment_quota": 92,
+      "proposed_control_quota": 92
+    }
+  ],
+  "proposal": {
+    "tag": "ASSUMPTION",
+    "sample": 1200,
+    "per_arm": 600,
+    "preparation_days": [
+      1,
+      14
+    ],
+    "enrolment_days": [
+      15,
+      59
+    ],
+    "followup_and_freeze_days": [
+      60,
+      90
+    ],
+    "primary_activation_window_days": 30,
+    "last_enrollee_primary_window_end_day": 89,
+    "historical_quarter_days": 91,
+    "enrolment_duration_days": 45
+  },
+  "planning_projection": {
+    "tag": "PROJECTION under historical-rate stability ASSUMPTION",
+    "weighted_planning_control_activation_pct": 6.26836183369504,
+    "expected_control_activations_per_600": 37.61017100217023,
+    "historical_core_lead_flow_scaled_to_45_days": 1956.2637362637363,
+    "fraction_of_scaled_historical_flow_needed_for_1200": 0.6134142231209976
+  },
+  "power": {
+    "tag": "PROJECTION model, not an empirical study result",
+    "assumptions": {
+      "tag": "ASSUMPTION",
+      "test": "two-sided normal two-proportion approximation",
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "equal_n_per_arm": 600,
+      "planning_p0": "quota-weighted historical core activation rate",
+      "limitations": "No cluster/attrition/multiplicity correction; no validated outcome-distribution assumption; operational holds can change rates."
+    },
+    "uplift_sensitivity": [
+      {
+        "tag": "PROJECTION approximate power under stated ASSUMPTION test design",
+        "assumed_treatment_uplift_percentage_points": 1.0,
+        "assumed_control_activation_pct": 6.26836183369504,
+        "assumed_treatment_activation_pct": 7.268361833695039,
+        "approximate_power_pct": 10.594038798155342
+      },
+      {
+        "tag": "PROJECTION approximate power under stated ASSUMPTION test design",
+        "assumed_treatment_uplift_percentage_points": 2.0,
+        "assumed_control_activation_pct": 6.26836183369504,
+        "assumed_treatment_activation_pct": 8.26836183369504,
+        "approximate_power_pct": 26.610932149129514
+      },
+      {
+        "tag": "PROJECTION approximate power under stated ASSUMPTION test design",
+        "assumed_treatment_uplift_percentage_points": 3.0,
+        "assumed_control_activation_pct": 6.26836183369504,
+        "assumed_treatment_activation_pct": 9.268361833695039,
+        "approximate_power_pct": 49.2561921452889
+      },
+      {
+        "tag": "PROJECTION approximate power under stated ASSUMPTION test design",
+        "assumed_treatment_uplift_percentage_points": 4.0,
+        "assumed_control_activation_pct": 6.26836183369504,
+        "assumed_treatment_activation_pct": 10.268361833695039,
+        "approximate_power_pct": 71.12957217550205
+      },
+      {
+        "tag": "PROJECTION approximate power under stated ASSUMPTION test design",
+        "assumed_treatment_uplift_percentage_points": 5.0,
+        "assumed_control_activation_pct": 6.26836183369504,
+        "assumed_treatment_activation_pct": 11.268361833695039,
+        "approximate_power_pct": 86.57062819116159
+      }
+    ],
+    "approximate_80pct_power_mde_percentage_points": 4.512360609101596
+  },
+  "decision_gate_proposal": {
+    "tag": "ASSUMPTION provisional thresholds for root integration, not final approved operating gates",
+    "go_to_larger_controlled_validation": {
+      "primary_ITT_point_uplift_pp_at_least": 1.0,
+      "ITT_uplift_unpooled_95pct_lower_bound_pp_greater_than": -2.0,
+      "interval_method": "(pT-pC) +/- 1.95996398454 * sqrt(pT*(1-pT)/nT + pC*(1-pC)/nC), displayed in percentage points; exploratory normal approximation",
+      "recurring_allin_acquisition_cac_treatment_vs_matched_control_max_ratio": 1.1,
+      "minimum_complete_required_event_logging_pct": 95.0,
+      "routine_under10min_share_of_preclassified_routine_preview_starts_at_least_pct": 70.0,
+      "unauthorized_commercial_order_tolerance": 0,
+      "known_unresolved_required_evidence_order_tolerance": 0,
+      "privacy_incident_tolerance": 0
+    },
+    "illustrative_program_cost_caps": {
+      "tag": "ASSUMPTION illustrative planning caps, not vendor price quotes",
+      "incremental_program_inr_per_treatment_lead": 50,
+      "separate_one_time_setup_inr": 100000
+    },
+    "not_broad_rollout": "An expansion decision does not establish superiority; broad rollout requires later positive uncertainty bounds, approved all-in economics and retention observation.",
+    "hold": "Inconclusive effect, missing cost/clock data, inadequate recruitment or unresolved evidence/operations capacity; do not describe as failed or successful causal proof.",
+    "no_go": "Critical privacy/security/commercial guardrail failure, known unsafe order lock, invented provider/serviceability status, or decision evidence of harm."
+  }
+}

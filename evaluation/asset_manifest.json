@@ -1,0 +1,114 @@
+{
+  "captured_at": "2026-11-08T15:47:01.132816+00:00",
+  "assets": [
+    {
+      "file": "s4_quote_card_v1_v2.png",
+      "caption": "Synthetic live quote versions, pre-tax midpoint; fresh-acceptance requirement captioned natively on slide",
+      "sha256": "3907c1d95386be580f757e548a6006284057eedaff313b3c7460fd5a7d056a27",
+      "source": "real localhost UI state; selected panel/excerpt at enlarged UI scale",
+      "session": {
+        "quote": "capture-b0753-quote",
+        "clinic": "capture-b0753-clinic",
+        "k06": "capture-b0753-K06"
+      },
+      "pixels": [
+        1328,
+        530
+      ]
+    },
+    {
+      "file": "s5_kyc_k06_hold.png",
+      "caption": "K06 fresh-OCR hold excerpt; no source identifier exposed",
+      "sha256": "a7cdb82d8b93a6d4c396a820dc7ab88aeb634f7e896e1e2cbde73ba282e207ca",
+      "source": "real localhost UI state; selected panel/excerpt at enlarged UI scale",
+      "session": {
+        "quote": "capture-b0753-quote",
+        "clinic": "capture-b0753-clinic",
+        "k06": "capture-b0753-K06"
+      },
+      "pixels": [
+        780,
+        738
+      ]
+    },
+    {
+      "file": "s5_architecture.png",
+      "caption": "Six implementation nodes; dashed boundary around A2 stand-in only; nine data paths",
+      "sha256": "c60b49eefb81bef42d7fcaa8ec7acf26ec008f4fdf18135d253803ad719ddd99",
+      "source": "real localhost UI state; selected panel/excerpt at enlarged UI scale",
+      "session": {
+        "quote": "capture-b0753-quote",
+        "clinic": "capture-b0753-clinic",
+        "k06": "capture-b0753-K06"
+      },
+      "pixels": [
+        2000,
+        890
+      ]
+    },
+    {
+      "file": "s6_backoffice_queue.png",
+      "caption": "Live queue excerpt: reason, owner, next action and age; role filter is demo-only",
+      "sha256": "66f73d67fe5a0078bb404ee295d0895646847ceffefe6051062eff0047efe522",
+      "source": "real localhost UI state; selected panel/excerpt at enlarged UI scale",
+      "session": {
+        "quote": "capture-b0753-quote",
+        "clinic": "capture-b0753-clinic",
+        "k06": "capture-b0753-K06"
+      },
+      "pixels": [
+        1700,
+        508
+      ]
+    },
+    {
+      "file": "s6_tracker.png",
+      "caption": "Live first-product tracker excerpt: mocked order locked; physical provisioning still pending",
+      "sha256": "9275b857170d2b47da892191776dd5f81e428c731706058860353976011518dc",
+      "source": "real localhost UI state; selected panel/excerpt at enlarged UI scale",
+      "session": {
+        "quote": "capture-b0753-quote",
+        "clinic": "capture-b0753-clinic",
+        "k06": "capture-b0753-K06"
+      },
+      "pixels": [
+        900,
+        520
+      ],
+      "state_verified": {
+        "digital": "Order locked",
+        "physical": [
+          {
+            "name": "Biz Fibre 300",
+            "typical_days": 5,
+            "status": "Awaiting provisioning-ready event",
+            "clock_starts": "product provisioning-ready; no guaranteed date"
+          },
+          {
+            "name": "Backup 4G/5G Failover",
+            "typical_days": 3,
+            "status": "Awaiting provisioning-ready event",
+            "clock_starts": "product provisioning-ready; no guaranteed date"
+          },
+          {
+            "name": "Cloud Email & Office Suite",
+            "typical_days": 1,
+            "status": "Awaiting provisioning-ready event",
+            "clock_starts": "product provisioning-ready; no guaranteed date"
+          },
+          {
+            "name": "Endpoint Security",
+            "typical_days": 1,
+            "status": "Awaiting provisioning-ready event",
+            "clock_starts": "product provisioning-ready; no guaranteed date"
+          }
+        ],
+        "mocked": true
+      },
+      "functional_capture_note": "Initial second-round image showed pending state. API state rechecked, seed assertions added, final image waits for observed locked heading. No UI design changed."
+    }
+  ],
+  "console_errors": [],
+  "mobile_horizontal_overflow": false,
+  "scope": "Screenshots and code diagram only; no PPTX/PDF or slide rendering. UI evidence enlargement changes scale, never text/results."
+}

@@ -1,0 +1,6 @@
+{
+  "engine": "Tesseract5.5.3",
+  "documents": 47,
+  "elapsed_seconds": 12.220266399992397,
+  "method": "OpenCV deskew, whole-page OCR and specimen-label parser; no registry or fixture used in extraction"
+}

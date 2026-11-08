@@ -1,0 +1,36 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+vendor/
+*.egg-info/
+build/
+dist/
+
+# Runtime evidence, uploads, databases and encryption state
+quotelock/.data/
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# Credentials and local editor settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# External executables and run-specific test outputs
+quotelock/tools/
+evaluation/pytest.xml
+evaluation/repository_test_receipt.json
+

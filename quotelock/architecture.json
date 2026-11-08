@@ -1,0 +1,6 @@
+{
+ "scope":"Implemented module data paths; optional LLM slot uses rules-based stand-in. All external services mocked.",
+ "nodes":[{"id":"A1","title":"Consent + input router","detail":"Hindi / English; structured budget","module":"app.py + boundary"},{"id":"A2","title":"Intent adapter","detail":"Redacted text; rules stand-in","module":"advisor"},{"id":"A3","title":"Deterministic engine","detail":"Schema, catalogue, terms, typical days","module":"catalogue"},{"id":"A4","title":"Versioned quote","detail":"Immutable hash; fresh acceptance","module":"quote"},{"id":"A5","title":"OCR + mock registries","detail":"DigiLocker mock; typed holds","module":"kyc"},{"id":"A6","title":"Recheck, accept, lock + tracker","detail":"e-sign / payment mandate mocked","module":"orders + tracker"}],
+ "model_boundary":["A2"],
+ "edges":[["A1","A2","redacted non-commercial intent"],["A2","A3","candidate slots only"],["A1","A3","structured facts / budget"],["A3","A1","invalid / missing: clarify or hold"],["A3","A4","SKU, price, terms, typical days"],["A1","A5","restricted evidence path"],["A5","A6","evidence status / holds"],["A4","A6","current version for acceptance"],["A3","A6","current gates / charges / serviceability"]]
+}

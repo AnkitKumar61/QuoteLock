@@ -1,0 +1,216 @@
+{
+  "K01": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "37THKXV5167L1ZS",
+    "udyam": null,
+    "bill_date": "2026-06-26",
+    "valid_till": "2028-03-26",
+    "udyam_date": "2024-03-24",
+    "signatory": "Neha Kaur",
+    "activity": "Services",
+    "legal": "Neha Kaur (Prop. Vindhya Tours & Travels)",
+    "address": "Shop/Unit 1, Tech Park Road, Visakhapatnam, A   ndhra Pradesh --118383"
+  },
+  "K02": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "19EOGXH4115Y1ZL",
+    "udyam": "UDYAM-WB-00-5053330",
+    "bill_date": "2026-05-22",
+    "valid_till": "2028-09-10",
+    "udyam_date": "2023-01-11",
+    "signatory": "Joseph Shah",
+    "activity": "Services",
+    "legal": "Joseph Shah (Prop. Harmony Dental! Care)",
+    "address": "Shop/Unit 199, Station Road, Kolkata, West Be   ngal - 347550"
+  },
+  "K03": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "27XUIXG0767D1ZP",
+    "udyam": "UDYAM-MH-00-9516696",
+    "bill_date": "2026-05-30",
+    "valid_till": "2028-07-04",
+    "udyam_date": "2024-11-21",
+    "signatory": "Joseph Singh",
+    "activity": "Manufacturing",
+    "legal": "Joseph Singh (Prop. Ganesh Woodcraft)",
+    "address": "Shop/Unit 80, Civil Lines, Nagpur, Maharashtr   a- 411231"
+  },
+  "K04": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": true,
+    "gstin": null,
+    "udyam": "UDYAM-MH-00-6131836",
+    "bill_date": "2026-05-28",
+    "valid_till": "2028-08-03",
+    "udyam_date": "2025-05-17",
+    "signatory": "Fatima Pillai",
+    "activity": "Services",
+    "address": null
+  },
+  "K05": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id"
+    ],
+    "blurred": false,
+    "gstin": "32TZAXB5481U1Z1",
+    "udyam": null,
+    "bill_date": "2026-06-11",
+    "valid_till": "2029-09-11",
+    "udyam_date": null,
+    "signatory": "Anita Shah",
+    "activity": null,
+    "legal": "Balaji Realty LLP",
+    "address": "Shop/Unit 38, Civil Lines, Kochi, Kerala - 75   2083"
+  },
+  "K06": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "O8YKZXS8189L1Z0",
+    "udyam": "UDYAM-RJ-00-6577157",
+    "bill_date": "2026-06-11",
+    "valid_till": "2028-09-15",
+    "udyam_date": "2023-01-24",
+    "signatory": "Pooja Shah",
+    "activity": "Services",
+    "legal": "Pooja Shah (Prop. Saffron Unisex Salon)",
+    "address": "Shop/Unit 71, Market Yard, Jaipur, Rajasthan   - 194057"
+  },
+  "K07": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "07CPCXNO398P1ZT",
+    "udyam": "UDYAM-DL-00-9565547",
+    "bill_date": "2026-07-05",
+    "valid_till": "2030-05-05",
+    "udyam_date": "2024-07-14",
+    "signatory": "Neha Banerjee",
+    "activity": "Services",
+    "legal": "Neha Banerjee (Prop. Shri Physio Clinic)",
+    "address": "Shop/Unit 52, Transport Nagar, Delhi, Delhi -   334596"
+  },
+  "K08": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "24X0RXG9365M1Z3",
+    "udyam": "UDYAM-GJ-00-8477445",
+    "bill_date": "2026-05-26",
+    "valid_till": "2027-09-18",
+    "udyam_date": "2022-11-12",
+    "signatory": "Joseph Rao",
+    "activity": "Services",
+    "legal": "Joseph Rao (Prop. Green Leaf Legal Associates)",
+    "address": "Shop/Unit 238, Ring Road, Vadodara, Gujarat -   348176"
+  },
+  "K09": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "37LDYXK0296F1ZB",
+    "udyam": "UDYAM-AP-00-9751562",
+    "bill_date": "2026-07-10",
+    "valid_till": "2027-12-22",
+    "udyam_date": "2023-07-04",
+    "signatory": "Anita Kulkarni",
+    "activity": "Services",
+    "legal": "Anita Kulkarni (Prop. Kaveri Insurance Advisors)",
+    "address": "Shop/Unit 217, Civil Lines, Visakhapatnam, An   dhra Pradesh - 405337"
+  },
+  "K10": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "27QHIXKO658U1ZL",
+    "udyam": "UDYAM-MH-00-7183141",
+    "bill_date": "2026-06-18",
+    "valid_till": "2029-06-01",
+    "udyam_date": "2024-01-09",
+    "signatory": "Nisha Arora",
+    "activity": "Services",
+    "legal": "Kaveri Stays LLP",
+    "address": "Shop/Unit 21, Sector 14, Mumbai, Maharashtra   - 570043"
+  },
+  "K11": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "O3KGZXT1320R1ZZ",
+    "udyam": "UDYAM-PB-00-9719478",
+    "bill_date": "2025-10-31",
+    "valid_till": "2028-12-23",
+    "udyam_date": "2025-09-15",
+    "signatory": "Vikram Pillai",
+    "activity": "Services",
+    "legal": "Trinity Bake House Pvt Ltd",
+    "address": "Shop/Unit 188, Industrial Area Phase 2, Ludhi   ana, Punjab - 541498"
+  },
+  "K12": {
+    "present": [
+      "address_proof",
+      "gst_certificate",
+      "signatory_id",
+      "udyam_certificate"
+    ],
+    "blurred": false,
+    "gstin": "37NBLXS1145E1ZU",
+    "udyam": "UDYAM-AP-00-5186772",
+    "bill_date": "2026-07-06",
+    "valid_till": "2029-03-03",
+    "udyam_date": "2024-02-03",
+    "signatory": "Pooja Agarwal",
+    "activity": "Services",
+    "legal": "Pooja Agarwal (Prop. Star Electronics)",
+    "address": "Shop/Unit 216, Nehru Nagar, Visakhapatnam, An   dhra Pradesh - 762071"
+  }
+}
