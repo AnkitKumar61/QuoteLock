@@ -8,4 +8,4 @@ The original case PDF and presentation template are not redistributed. Supplied 
 
 Python packages and Tesseract retain their respective licences. No virtual environment, package vendor tree, Tesseract executable or trained-data binary is distributed in this repository. Install dependencies using the listed sources and their licence terms.
 
-The SVG banner was authored for this repository. Product screenshots are captures of the synthetic local prototype. The architecture image is generated from the prototype's six-node/nine-path specification.
+The original SVG banner was authored for this repository and is retained. The current README cover is AI-generated concept artwork; its prompt and scope are recorded in `docs/README_ART.md`. Product screenshots are unchanged captures of the synthetic local prototype. The architecture image is generated from the prototype's six-node/nine-path specification.
