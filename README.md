@@ -82,8 +82,6 @@ python3 -m venv .venv
 
 </details>
 
-Open **http://127.0.0.1:8765** · API explorer **http://127.0.0.1:8765/docs**
-
 > Use localhost and synthetic documents only. Demo roles and ephemeral encryption keys do not provide production authentication or key management.
 
 **Try the clinic journey:** load the synthetic clinic → see the quote → give consent → check **K02** → accept the current version → pass the explicit mock order gates → inspect the tracker.
