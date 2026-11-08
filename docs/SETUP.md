@@ -51,4 +51,4 @@ Voice, Marathi, WhatsApp and an actual LLM are future work. No external registry
 
 ## Pitch files
 
-`output/Final_Slide_Content_v4.md` is a seven-slide Markdown build source; its support file is reference only. The original presentation template is excluded from this repository. Supply your authorised copy separately if later building a presentation. No PPTX/PDF is part of this release.
+`output/Final_Slide_Content_v4.md` is a seven-slide Markdown build source; its support file is reference only. The user-supplied final presentation is attached unchanged as `docs/presentation/QuoteLock_Logging_Final_v2.pdf`. The original case PDF and PowerPoint template remain excluded. Supply your authorised template separately if later building a presentation; no PPTX/PDF was authored or modified to attach this file.

@@ -1,6 +1,6 @@
 # README cover artwork
 
-The current README uses `docs/assets/quotelock-cover-v2.png`, generated with the built-in image-generation tool for the QuoteLock brand. It is conceptual artwork, not an app screenshot or evidence of a physical product. All product screenshots remain the unchanged captures of the synthetic running prototype.
+`docs/assets/quotelock-cover-v2.png` is retained concept artwork generated with the built-in image-generation tool for QuoteLock. It is not a photograph, app screenshot or evidence of a physical product. The current README instead uses a plain project header, the supplied PDF and a native draw.io system diagram. Historical screenshots remain the unchanged synthetic prototype captures.
 
 The original SVG banner is retained as a separate legacy asset. No additional plugin installation, model download or prototype dependency was required.
 

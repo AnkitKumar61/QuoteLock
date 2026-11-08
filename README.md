@@ -1,60 +1,52 @@
-<p align="center">
-  <img src="docs/assets/quotelock-cover-v2.png" alt="QuoteLock — One quote. Every handoff. Rules decide; the model only listens." width="100%">
-</p>
+<h1 align="center">QuoteLock</h1>
+
+<p align="center"><strong>MSME bundle quoting, verification and order tracking</strong><br>Logging · VIT Vellore · Project Udyam Digital</p>
 
 <p align="center">
   <a href="https://github.com/AnkitKumar61/QuoteLock/actions/workflows/ci.yml"><img src="https://github.com/AnkitKumar61/QuoteLock/actions/workflows/ci.yml/badge.svg" alt="Live test status"></a>
   <img src="docs/assets/readme-stack-v2.svg" alt="Python 3.11+, FastAPI, synthetic demo" width="306" height="20">
 </p>
 
-<p align="center"><strong>Telecom bundles an MSME owner can understand.<br>One saved quote from discovery to verification, acceptance and handoff.</strong></p>
-
 <p align="center">
-  <a href="#see-it-work">See it work</a> &nbsp; / &nbsp;
-  <a href="#run-quotelock">Run locally</a> &nbsp; / &nbsp;
-  <a href="#a-boundary-you-can-inspect">Architecture</a> &nbsp; / &nbsp;
-  <a href="#show-the-work">Evidence</a> &nbsp; / &nbsp;
+  <a href="docs/presentation/QuoteLock_Logging_Final_v2.pdf">Presentation PDF</a> ·
+  <a href="#system-architecture">System architecture</a> ·
+  <a href="#run-quotelock">Run locally</a> ·
+  <a href="#show-the-work">Validation</a> ·
   <a href="docs/PRIVACY.md">Privacy</a>
 </p>
 
----
+QuoteLock lets an MSME owner explore a telecom bundle in Hindi or English, review its price, verify evidence and accept the current quote version. Partners continue unresolved cases with a reason, an owner and a next action.
 
-## See it work
+This is a synthetic prototype. The intent adapter is a rules-based stand-in; registry lookups, DigiLocker, e-sign, serviceability and payment mandates are mocked. Prices, eligibility and order writes remain deterministic.
 
-An owner chooses services in **Hindi or English**. Deterministic rules price the bundle. Add-ons create a new quote version. Evidence checks either clear the next step or leave an owned hold.
+## Presentation
 
-**Synthetic prototype:** the intent adapter is a rules-based stand-in. Registries, DigiLocker, e-sign, serviceability and payment mandates are mocked. The captures below come from the running app; the cover is concept artwork.
+**[Open the final presentation — PDF](docs/presentation/QuoteLock_Logging_Final_v2.pdf)** · [Raw PDF / download](https://raw.githubusercontent.com/AnkitKumar61/QuoteLock/main/docs/presentation/QuoteLock_Logging_Final_v2.pdf)
 
-### Change the bundle. Accept the new version.
+Seven slides covering the acquisition funnel, segment economics, versioned quotes, architecture, operational ownership and pilot design. The supplied file is attached unchanged.
 
-<p align="center">
-  <img src="output/assets/s4_quote_card_v1_v2.png" alt="Actual prototype: AirFiber quote v1 at INR999/month becomes v2 at INR1348/month after a business postpaid line is added" width="900">
-</p>
-
-**₹999 → ₹1,348/month** adds a business postpaid line. A new hash means **fresh acceptance after checks**. These are illustrative pre-tax catalogue midpoints, not published commercial offers.
-
-### A hold explains itself. A tracker keeps the clocks separate.
+## System architecture
 
 <p align="center">
-  <img src="output/assets/s5_kyc_k06_hold.png" alt="Actual K06 hold: checksum and exact-registry mismatch; review cannot override a failed rule" width="300">
-  &nbsp;&nbsp;
-  <img src="output/assets/s6_tracker.png" alt="Actual tracker: mocked order locked, physical product awaiting provisioning readiness" width="480">
+  <a href="docs/architecture/quotelock-system.svg"><img src="docs/architecture/quotelock-system.svg" alt="QuoteLock system architecture: owner and partner interface, one FastAPI application, six authority modules, model boundary around A2 only, and a shared local SQLite store" width="100%"></a>
 </p>
 
-**K06 stays held.** The evidence conflict has a reason and an owner. Review cannot override a failed rule.
+[Open full-size SVG](docs/architecture/quotelock-system.svg) · [Editable draw.io source](docs/architecture/quotelock-system.drawio) · [Architecture notes and reference mapping](docs/architecture/README.md)
 
-**Order locked ≠ service active.** Typical installation time begins at product readiness, never as a guarantee.
+The diagram follows the presentation's architecture and exception flow (pages 5–6), checked against the implementation. Boxes are logical modules in one FastAPI process, not separate deployed services.
 
-<details>
-<summary><strong>Explore the mobile interface and partner queue</strong></summary>
-<br>
-<p align="center"><img src="docs/assets/ui_mobile.png" alt="Actual phone-width QuoteLock interface" width="360"></p>
+| Module | Responsibility |
+|---|---|
+| **A1 · Consent and router** | Hindi/English input, consent and structured business facts. Budget bypasses the adapter. |
+| **A2 · Intent adapter** | Redacted, non-commercial intent only. Rules-based today; a live LLM is future work. |
+| **A3 · Rules engine** | Catalogue eligibility, dependencies, prices, contract terms and typical installation days. |
+| **A4 · Quote versions** | Immutable content hashes and fresh acceptance when the bundle changes. |
+| **A5 · Evidence checks** | Recorded packets or fresh OCR, local mock registries and reason-coded holds. |
+| **A6 · Recheck and lock** | Bound identity, consent, current acceptance, required gates and the digital/physical tracker. |
 
-Unresolved inquiries continue with a reason, an owner and a next action. Queue age is elapsed capture time, not a response promise.
+**The AI never sees a price.** Prices, catalogue rows, quote cards, raw identifiers, evidence and write authority stay outside A2. Unknown text blocks the call. A clear packet alone cannot authorise an unbound quote, and review cannot override a failed rule.
 
-<img src="output/assets/s6_backoffice_queue.png" alt="Actual synthetic partner queue with reason, owner, next action and age" width="900">
-
-</details>
+SQLite stores quote versions, consent, holds, locks and encrypted evidence blobs. Vault keys and transient OCR fields remain process-local. Demo roles, retention operations and key management are not production controls; see [Privacy](docs/PRIVACY.md) and [Security](SECURITY.md).
 
 ## Run QuoteLock
 
@@ -110,28 +102,6 @@ Start a fresh inquiry for a new attempt. Locked orders are immutable. No-GST pre
 
 </details>
 
-## A boundary you can inspect
-
-### The AI never sees a price.
-
-Only redacted, non-commercial intent reaches the current rules-based adapter. **Budget, prices, catalogue rows, quote cards, raw identifiers, contacts and order writes remain outside it.** Unknown text blocks the call; candidate slots cannot approve an offer.
-
-| Step | Authority stays with |
-|---|---|
-| Discover a bundle | Structured facts, Hindi/English templates and catalogue rules |
-| Price and revise | Deterministic arithmetic, eligibility, dependencies and immutable versions |
-| Verify and lock | Consent, bound business identity, current acceptance and required gates |
-| Continue an exception | A named owner and next action; no rule override |
-
-<details>
-<summary><strong>Open the six-node / nine-path architecture</strong></summary>
-<br>
-<img src="output/assets/s5_architecture.png" alt="Code-derived six-node architecture with nine paths and the dashed model boundary around A2 only" width="1000">
-
-The diagram comes from [architecture.json](quotelock/architecture.json). A2 is the intent stand-in. Structured budget/facts bypass it. The final recheck requires matching identity, consent, clear evidence, current acceptance, known charges, serviceability and mocked payment/signature gates.
-
-</details>
-
 ## Show the work
 
 | Measured on synthetic inputs | Result | Read it honestly |
@@ -170,7 +140,7 @@ The 5,000-lead Base model projects 368 → about 440 activations and **₹1.63�
 | [FastAPI app](quotelock/app.py) | [Privacy design](docs/PRIVACY.md) | [Contributing](CONTRIBUTING.md) |
 | [Domain modules](quotelock/) | [Test suite](quotelock/tests/) | [Setup and fresh OCR](docs/SETUP.md) |
 | [Mobile UI](quotelock/static/index.html) | [Source calculations](analysis/numbers.py) | [Known security limits](SECURITY.md) |
-| [Synthetic fixtures](YTL_TrackA_Udyam_Digital_Data/README.md) | [Seven-slide content](output/Final_Slide_Content_v4.md) | [Release verification](docs/VERIFICATION.md) |
+| [Synthetic fixtures](YTL_TrackA_Udyam_Digital_Data/README.md) | [Presentation PDF](docs/presentation/QuoteLock_Logging_Final_v2.pdf) | [Release verification](docs/VERIFICATION.md) |
 
 **Next:** owner research and process pilot · better identifier OCR · approved no-GST evidence · production authentication/keys/retention · evaluated live integrations and model · Marathi, voice and WhatsApp.
 
@@ -178,4 +148,4 @@ The 5,000-lead Base model projects 368 → about 440 activations and **₹1.63�
 
 <p align="center"><strong>One saved quote. Clear authority.<br>An owner for every unresolved step.</strong></p>
 
-<p align="center"><sub>Student prototype · Project Udyam Digital · Enterprise Track A<br>Fictional Accel Telecom data. No real customer outcomes or Airtel endorsement.<br><a href="NOTICE.md">Rights & attribution</a> · <a href="docs/README_ART.md">Cover artwork</a></sub></p>
+<p align="center"><sub>Logging · VIT Vellore · Project Udyam Digital · Enterprise Track A<br>Fictional Accel Telecom data. No real customer outcomes or Airtel endorsement.<br><a href="NOTICE.md">Rights & attribution</a> · <a href="docs/README_ART.md">Artwork provenance</a></sub></p>

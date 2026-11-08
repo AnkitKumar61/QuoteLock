@@ -4,8 +4,8 @@ QuoteLock is a student prototype for Project Udyam Digital, Enterprise Track A. 
 
 `YTL_TrackA_Udyam_Digital_Data/` contains the supplied fictional Accel Telecom hackathon fixtures. All businesses, people, identifiers, documents and figures are synthetic. GSTINs deliberately use an invalid PAN entity type; Udyam fixtures use a non-existent district code. The source README is preserved. Ground-truth annotations are team visual transcriptions, not a hidden judge answer key.
 
-The original case PDF and presentation template are not redistributed. Supplied fixture attribution remains separate from project code. No open-source licence has been selected and no licence over third-party content is implied.
+The original case PDF and presentation template are not redistributed. The final QuoteLock presentation supplied by Logging, VIT Vellore is attached unchanged at the user's request under `docs/presentation/`. Supplied fixture attribution remains separate from project code. No open-source licence has been selected and no licence over third-party content is implied.
 
 Python packages and Tesseract retain their respective licences. No virtual environment, package vendor tree, Tesseract executable or trained-data binary is distributed in this repository. Install dependencies using the listed sources and their licence terms.
 
-The original SVG banner was authored for this repository and is retained. The current README cover is AI-generated concept artwork; its prompt and scope are recorded in `docs/README_ART.md`. Product screenshots are unchanged captures of the synthetic local prototype. The architecture image is generated from the prototype's six-node/nine-path specification.
+The README uses a plain project header and a native draw.io architecture based on the supplied presentation and prototype code. Earlier SVG/AI-generated branding is retained separately, with its scope recorded in `docs/README_ART.md`; it is not presented as a real product photograph. Historical product captures remain in the evidence files. The attached PDF replaces the screenshot gallery in the README.

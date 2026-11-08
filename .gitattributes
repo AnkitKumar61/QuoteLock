@@ -6,4 +6,6 @@
 *.svg text eol=lf
 *.csv -text
 *.png binary
+*.pdf binary
+*.drawio text eol=lf
 
