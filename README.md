@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **🎬 [Watch the QuoteLock demo video](https://drive.google.com/file/d/1BmvIgrzNsKskJyHe_JqFBJEp4a4Newm1/view?usp=sharing)**
+>
+> Start here for a walkthrough of QuoteLock by Logging · VIT Vellore.
+
 <p align="center">
   <img src="docs/assets/quotelock-cover-v2.png" alt="QuoteLock — One quote. Every handoff. Rules decide; the model only listens." width="100%">
 </p>
