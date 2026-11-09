@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="244" viewBox="0 0 1280 244" role="img" aria-labelledby="title desc">
+  <title id="title">The QuoteLock journey</title>
+  <desc id="desc">Quote a rules-priced bundle with immutable versions. Verify synthetic evidence and record reason-coded holds. Lock with bound identity, acceptance and gates. Track digital and physical states with an owned next action.</desc>
+  <rect width="1280" height="244" fill="#f7f3ee"/>
+  <path d="M68 56H1004" stroke="#d7cac0" stroke-width="2"/>
+  <g fill="#e40000">
+    <circle cx="68" cy="56" r="22"/><circle cx="380" cy="56" r="22"/><circle cx="692" cy="56" r="22"/><circle cx="1004" cy="56" r="22"/>
+    <path d="m229 50 7 6-7 6m312-12 7 6-7 6m312-12 7 6-7 6" fill="none" stroke="#e40000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g fill="#fff" font-size="24" font-weight="700" text-anchor="middle">
+      <text x="68" y="64">1</text><text x="380" y="64">2</text><text x="692" y="64">3</text><text x="1004" y="64">4</text>
+    </g>
+    <g fill="#101820" font-size="40" font-weight="700" letter-spacing="-1">
+      <text x="46" y="134">Quote</text><text x="358" y="134">Verify</text><text x="670" y="134">Lock</text><text x="982" y="134">Track</text>
+    </g>
+    <g fill="#5e5148" font-size="22">
+      <text x="46" y="174">Rules-priced bundle</text><text x="46" y="204">Immutable versions</text>
+      <text x="358" y="174">Synthetic evidence</text><text x="358" y="204">Reason-coded holds</text>
+      <text x="670" y="174">Bound identity</text><text x="670" y="204">Acceptance + gates</text>
+      <text x="982" y="174">Digital / physical</text><text x="982" y="204">Owned next action</text>
+    </g>
+  </g>
+</svg>
