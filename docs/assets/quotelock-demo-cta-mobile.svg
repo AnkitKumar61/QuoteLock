@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="240" viewBox="0 0 640 240" role="img" aria-labelledby="title desc">
+  <title id="title">Watch the QuoteLock demo video</title>
+  <desc id="desc">A red play button beside Watch the demo. QuoteLock in action. Open on Google Drive.</desc>
+  <rect width="640" height="240" fill="#101820"/>
+  <rect x="32" y="32" width="100" height="100" rx="16" fill="#e40000"/>
+  <path d="M72 60V104L107 82Z" fill="#fff"/>
+  <g font-family="sans-serif">
+    <text x="160" y="77" font-size="42" font-weight="700" letter-spacing="-1" fill="#fff">Watch the demo.</text>
+    <text x="162" y="114" font-size="24" fill="#b2bdc9">QuoteLock in action</text>
+    <path d="M32 158H608" stroke="#34404d"/>
+    <text x="32" y="208" font-size="25" font-weight="700" fill="#fff">Open on Google Drive</text>
+  </g>
+  <path d="M577 212 602 187M580 187H602V209" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M0 238H640" stroke="#e40000" stroke-width="4"/>
+</svg>

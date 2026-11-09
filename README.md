@@ -1,10 +1,11 @@
-> [!IMPORTANT]
-> **🎬 [Watch the QuoteLock demo video](https://drive.google.com/file/d/1BmvIgrzNsKskJyHe_JqFBJEp4a4Newm1/view?usp=sharing)**
->
-> Start here for a walkthrough of QuoteLock by Logging · VIT Vellore.
-
 <p align="center">
-  <img src="docs/assets/quotelock-cover-v2.png" alt="QuoteLock — One quote. Every handoff. Rules decide; the model only listens." width="100%">
+  <a href="https://drive.google.com/file/d/1BmvIgrzNsKskJyHe_JqFBJEp4a4Newm1/view?usp=sharing" title="Watch the QuoteLock demo video on Google Drive">
+    <img src="docs/assets/quotelock-cover-v2.png" alt="QuoteLock — One quote. Every handoff. Rules decide; the model only listens. Click to watch the demo video." width="100%">
+    <picture>
+      <source media="(max-width: 640px)" srcset="docs/assets/quotelock-demo-cta-mobile.svg">
+      <img src="docs/assets/quotelock-demo-cta.svg" alt="Watch the QuoteLock demo video — opens on Google Drive" width="100%">
+    </picture>
+  </a>
 </p>
 
 <p align="center"><strong>MSME bundle quoting, verification and order tracking</strong><br>Logging · VIT Vellore · Project Udyam Digital</p>

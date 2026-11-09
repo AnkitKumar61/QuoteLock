@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="176" viewBox="0 0 1280 176" role="img" aria-labelledby="title desc">
+  <title id="title">Watch the QuoteLock demo video</title>
+  <desc id="desc">A red play button beside Watch the demo. QuoteLock in action by Logging, VIT Vellore. Open the video on Google Drive.</desc>
+  <rect width="1280" height="176" fill="#101820"/>
+  <rect x="32" y="32" width="112" height="112" rx="16" fill="#e40000"/>
+  <path d="M77 64 77 112 115 88Z" fill="#fff"/>
+  <g font-family="sans-serif">
+    <text x="176" y="83" font-size="44" font-weight="700" letter-spacing="-1" fill="#fff">Watch the demo.</text>
+    <text x="178" y="120" font-size="20" fill="#b2bdc9">QuoteLock in action · Logging · VIT Vellore</text>
+    <path d="M928 46V130" stroke="#34404d"/>
+    <text x="962" y="79" font-size="16" font-weight="700" letter-spacing="1.7" fill="#fff">OPEN VIDEO</text>
+    <text x="962" y="109" font-size="19" fill="#b2bdc9">Google Drive</text>
+  </g>
+  <circle cx="1192" cy="88" r="32" fill="none" stroke="#b2bdc9" stroke-width="1.5"/>
+  <path d="M1179 101 1204 76M1182 76H1204V98" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M0 174H1280" stroke="#e40000" stroke-width="4"/>
+</svg>
